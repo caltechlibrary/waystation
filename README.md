@@ -1,9 +1,9 @@
-# Template for software repositories by the Caltech Library
+# Waystation
 
-This is a template README file for software repositories.  This first paragraph of the README should summarize your software in a concise fashion, preferably using no more than one or two sentences.
+A [GitHub Action](https://docs.github.com/actions) to archive your repository's [GitHub Pages](https://docs.github.com/en/pages) site automatically in the Internet Archive's [Wayback Machine](https://web.archive.org). _Waystation_ is a loose acronym of <ins><b>Way</b></ins>back <ins><b>s</b></ins>i<ins><b>t</b></ins>e <ins><b>a</b></ins>rchiving automa<ins><b>tion</b></ins>.
 
 [![License](https://img.shields.io/badge/License-BSD--like-lightgrey)](https://choosealicense.com/licenses/bsd-3-clause)
-[![Latest release](https://img.shields.io/github/v/release/caltechlibrary/template.svg?color=b44e88)](https://github.com/caltechlibrary/template/releases)
+[![Latest release](https://img.shields.io/github/v/release/caltechlibrary/waystation.svg?color=b44e88)](https://github.com/caltechlibrary/waystation/releases)
 [![DOI](https://data.caltech.edu/badge/201106666.svg)](https://data.caltech.edu/badge/latestdoi/201106666)
 
 
@@ -22,9 +22,9 @@ This is a template README file for software repositories.  This first paragraph 
 
 ## Introduction
 
-This repository is a GitHub template repository for creating software project repositories at the Caltech Library.  The [associated wiki page](https://github.com/caltechlibrary/template/wiki/Using-this-template-repo) explains how to use the template repository.
+This repository is a GitHub waystation repository for creating software project repositories at the Caltech Library.  The [associated wiki page](https://github.com/caltechlibrary/waystation/wiki/Using-this-waystation-repo) explains how to use the waystation repository.
 
-This README file is in Markdown format, and is meant to provide a template for README files as well an illustration of what the README file can be expected to look like.  For a software project, this [Introduction](#introduction) section &ndash; which you are presently reading &ndash; should provide background for the project, a brief explanation of what the project is about, and optionally, pointers to resources that can help orient readers.  Ideally, this section should be short.
+This README file is in Markdown format, and is meant to provide a waystation for README files as well an illustration of what the README file can be expected to look like.  For a software project, this [Introduction](#introduction) section &ndash; which you are presently reading &ndash; should provide background for the project, a brief explanation of what the project is about, and optionally, pointers to resources that can help orient readers.  Ideally, this section should be short.
 
 
 ## Installation
@@ -87,6 +87,6 @@ This work was funded by the California Institute of Technology Library.
 <div align="center">
   <br>
   <a href="https://www.caltech.edu">
-    <img width="100" height="100" src="https://raw.githubusercontent.com/caltechlibrary/template/main/.graphics/caltech-round.png">
+    <img width="100" height="100" src="https://raw.githubusercontent.com/caltechlibrary/waystation/main/.graphics/caltech-round.png">
   </a>
 </div>
