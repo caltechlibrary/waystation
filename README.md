@@ -20,6 +20,8 @@ A [GitHub Action](https://docs.github.com/actions) to archive your repository's 
 
 ## Introduction
 
+Many projects use [GitHub Pages](https://docs.github.com/en/pages) for documentation and other purposes. GitHub Pages are wonderful, but they are not archived; morever, GitHub itself has in the past [changed the URLs and policies surrounding GitHub Pages](https://ws-dl.blogspot.com/2022/03/2022-03-30-github-is-not-archive-github.html)—and may do so again in the future. You may want to preserve your GitHub Pages in the Internet Archive's [Wayback Machine](https://web.archive.org), and this is where the _Waystation_ GitHub Action comes in.
+
 
 ## Installation
 
