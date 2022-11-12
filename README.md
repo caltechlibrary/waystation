@@ -39,10 +39,11 @@ This action is available from the [GitHub Marketplace](https://github.com/market
 3. Paste the following content into the file:
     ```yaml
     on:
-      push:
+      release:
+        types: [published]
     jobs:
       Workflow:
-        uses: 
+        uses: caltechlibrary/waystation@main
     ```
 4. Save the file, add it to your git repository, and commit the changes.
 5. (If you did the steps above outside of GitHub) Push your repository changes to GitHub.
