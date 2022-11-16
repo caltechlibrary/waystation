@@ -43,7 +43,9 @@ This action is available from the [GitHub Marketplace](https://github.com/market
         types: [published]
     jobs:
       Workflow:
-        uses: caltechlibrary/waystation@main
+        runs-on: ubuntu-latest
+        steps:
+          - uses: caltechlibrary/waystation@main
     ```
 4. Save the file, add it to your git repository, and commit the changes.
 5. (If you did the steps above outside of GitHub) Push your repository changes to GitHub.
@@ -70,9 +72,11 @@ on:
     types: [published]
 jobs:
   Workflow:
-    uses: caltechlibrary/waystation@main
-    with:
-      dry_run: true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: caltechlibrary/waystation@main
+        with:
+          dry_run: true
 ```
 
 
@@ -89,10 +93,12 @@ on:
     types: [published]
 jobs:
   Workflow:
-    uses: caltechlibrary/waystation@main
-    with:
-      dry_run: true
-      debug: true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: caltechlibrary/waystation@main
+        with:
+          dry_run: true
+          debug: true
 ```
 
 
