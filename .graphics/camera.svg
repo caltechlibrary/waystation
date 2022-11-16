@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="-11 -6.5 100 100" fill="none" stroke="currentColor"
+<svg viewBox="0 0 50 50" fill="none" stroke="currentColor"
      stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
      style="color: #ffffff;" xmlns="http://www.w3.org/2000/svg">
   <title>Waystation Action icon</title>
   <ellipse style="stroke-width: 1px; fill: rgb(246, 106, 8); stroke: none;"
-           cx="12.185" cy="12.824" rx="23" ry="23"/>
-  <g transform="matrix(1, 0, 0, 1, 0, 0.824)">
+           cx="25" cy="25" rx="25" ry="25"/>
+  <g transform="matrix(1, 0, 0, 1, 12.6, 12)">
     <path d="M 23.185 19 C 23.185 20.105 22.29 21 21.185 21 L 3.185 21 C 2.08 21 1.185 20.105 1.185 19 L 1.185 8 C 1.185 6.895 2.08 6 3.185 6 L 7.185 6 L 9.185 3 L 15.185 3 L 17.185 6 L 21.185 6 C 22.29 6 23.185 6.895 23.185 8 L 23.185 19 Z" style=""/>
     <circle cx="12.185" cy="13" r="4" style=""/>
   </g>
