@@ -1,4 +1,4 @@
-# Waystation
+# Waystation<img width="12%" align="right" src="https://github.com/caltechlibrary/waystation/blob/main/.graphics/camera.svg">
 
 _Waystation_ is a [GitHub Action](https://docs.github.com/actions) that makes it easy to archive your repository's [GitHub Pages](https://docs.github.com/en/pages) site automatically in the Internet Archive's [Wayback Machine](https://web.archive.org).
 
@@ -23,7 +23,7 @@ Many projects use [GitHub Pages](https://docs.github.com/en/pages) for documenta
 
 ### How does Waystation work?
 
-Waystation (<ins><b>Way</b></ins>back <ins><b>s</b></ins>i<ins><b>t</b></ins>e <ins><b>a</b></ins>rchiving automa<ins><b>tion</b></ins>) automates the task of sending your project's [GitHub Pages](https://docs.github.com/en/pages) URL to the [Wayback Machine](https://web.archive.org). By default, it triggers on software releases in your repository and uses the [Wayback Machine GitHub Action](https://github.com/marketplace/actions/wayback-machine) to send your repository's configured GitHub Pages URL to the Wayback Machine, thereby ensuring that the latest copy of your site is archived. You can change the trigger condition if needed.
+Waystation (<ins><b>Way</b></ins>back <ins><b>s</b></ins>i<ins><b>t</b></ins>e <ins><b>a</b></ins>rchiving automa<ins><b>tion</b></ins>) automates the task of sending your project's [GitHub Pages](https://docs.github.com/en/pages) URL to the [Wayback Machine](https://web.archive.org). It's intended to be triggered on software releases in your repository and uses the [Wayback Machine GitHub Action](https://github.com/marketplace/actions/wayback-machine) to send your repository's configured GitHub Pages URL to the Wayback Machine, thereby ensuring that the latest copy of your site is archived. You can change the trigger condition if needed.
 
 ### Why would you want to use it?
 
@@ -62,11 +62,38 @@ Several parameters control the behavior of this GitHub Action; they are describe
 
 Setting the parameter `dry_run` to `true` will cause the action to execute without sending the URL to the Wayback Machine. This is useful during testing, especially if you want to try different trigger conditions.
 
+Here is an example workflow definition using `dry_run`:
+
+```yaml
+on:
+  release:
+    types: [published]
+jobs:
+  Workflow:
+    uses: caltechlibrary/waystation@main
+    with:
+      dry_run: true
+```
+
 
 ### `debug` (default: `false`)
 
 Setting the parameter `debug` to `true` will cause the action to print the values of the input variables
 and the GitHub context. This is useful for debugging the workflow.
+
+Here is an example workflow definition using `debug`:
+
+```yaml
+on:
+  release:
+    types: [published]
+jobs:
+  Workflow:
+    uses: caltechlibrary/waystation@main
+    with:
+      dry_run: true
+      debug: true
+```
 
 
 ### `save_errors` (default: `false`)
