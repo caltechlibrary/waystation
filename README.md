@@ -1,4 +1,4 @@
-# Waystation<img width="12%" align="right" src="https://github.com/caltechlibrary/waystation/blob/main/.graphics/camera.svg">
+# Waystation<img width="10%" align="right" src="https://github.com/caltechlibrary/waystation/blob/main/.graphics/camera.svg">
 
 _Waystation_ is a [GitHub Action](https://docs.github.com/actions) that makes it easy to archive your repository's [GitHub Pages](https://docs.github.com/en/pages) site automatically in the Internet Archive's [Wayback Machine](https://web.archive.org).
 
