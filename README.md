@@ -46,6 +46,8 @@ This action is available from the [GitHub Marketplace](https://github.com/market
         runs-on: ubuntu-latest
         steps:
           - uses: caltechlibrary/waystation@main
+            with:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     ```
 4. Save the file, add it to your git repository, and commit the changes.
 5. (If you did the steps above outside of GitHub) Push your repository changes to GitHub.
@@ -67,6 +69,7 @@ Setting the parameter `dry_run` to `true` will cause the action to execute witho
 Here is an example workflow definition using `dry_run`:
 
 ```yaml
+# .github/workflows/archive-github-pages.yml
 on:
   release:
     types: [published]
@@ -76,6 +79,7 @@ jobs:
     steps:
       - uses: caltechlibrary/waystation@main
         with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           dry_run: true
 ```
 
@@ -97,6 +101,7 @@ jobs:
     steps:
       - uses: caltechlibrary/waystation@main
         with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           dry_run: true
           debug: true
 ```
