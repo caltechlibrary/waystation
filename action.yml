@@ -50,6 +50,7 @@ runs:
       # This stores the URL in env.pages_url. The value will be "null" if
       # no pages URL is returned for any reason.
       id: s1
+      shell: bash
       run: |
         echo pages_url=$(curl -s -H 'Accept: application/vnd.github+json' -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/caltechlibrary/${{ github.repository }}/pages | jq '.html_url' | tr -d '"') >> $GITHUB_ENV
 
@@ -61,6 +62,7 @@ runs:
         # necessary; you could put the expression directly into the echo
         # command below. But when I do that, I get a doubling of the output.
         GITHUB_CONTEXT: ${{ toJSON(github) }}
+      shell: bash
       run: |
         echo "dry_run = ${{ inputs.dry_run }}"
         echo "pages_url = ${{ env.pages_url }}"
@@ -75,6 +77,7 @@ runs:
       id: s3
       if: startsWith(env.pages_url, 'null') == true
       uses: actions/github-script@v6.3.3
+      shell: bash
       with:
         script: |
           core.setFailed("Could not retrieve the GitHub Pages URL for repository ${{ github.repository }}.")
@@ -83,6 +86,7 @@ runs:
       id: s4
       if: startsWith(env.pages_url, 'null') != true && inputs.dry_run != true && inputs.dry_run != 'true'
       uses: JamieMagee/wayback@v1.3.19
+      shell: bash
       with:
         url: ${{ env.pages_url }}
         saveErrors: ${{ inputs.save_errors }}
@@ -91,6 +95,7 @@ runs:
 
     - name: Summarize the results of the run.
       id: s5
+      shell: bash
       run: |
         echo \#\# Results of sending the GitHub Pages to the Wayback Machine >> $GITHUB_STEP_SUMMARY
         echo Dry run: ${{ inputs.dry_run }}                                  >> $GITHUB_STEP_SUMMARY
