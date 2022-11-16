@@ -1,5 +1,5 @@
 # Change log for REPOSITORY
 
-## Version 1.0.0
+## Version 1.0
 
 First release.
