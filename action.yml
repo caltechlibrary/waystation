@@ -77,7 +77,6 @@ runs:
       id: s3
       if: startsWith(env.pages_url, 'null') == true
       uses: actions/github-script@v6.3.3
-      shell: bash
       with:
         script: |
           core.setFailed("Could not retrieve the GitHub Pages URL for repository ${{ github.repository }}.")
@@ -86,7 +85,6 @@ runs:
       id: s4
       if: startsWith(env.pages_url, 'null') != true && inputs.dry_run != true && inputs.dry_run != 'true'
       uses: JamieMagee/wayback@v1.3.19
-      shell: bash
       with:
         url: ${{ env.pages_url }}
         saveErrors: ${{ inputs.save_errors }}
