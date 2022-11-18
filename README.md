@@ -36,7 +36,7 @@ This action is available from the [GitHub Marketplace](https://github.com/market
 
 1. In the main branch of your repository, create a `.github/workflows` directory if this directory does not already exist.
 2. In the `.github/workflows` directory, create a file named `archive-github-pages.yml`.
-3. Paste the following content into the file:
+3. Copy and paste the following content into the file:
     ```yaml
     on:
       release:
@@ -57,9 +57,9 @@ Refer to the next section for more information.
 
 ## Usage
 
-The trigger condition that causes Waystation to run is determined by the `on` statement in your `archive-github-pages.yml` workflow file.
+The trigger condition that causes Waystation to run is determined by the `on` statement in your `archive-github-pages.yml` workflow file. The examples shown here use `on: release` to trigger when software is released, but you can use [other trigger events defined by GitHub](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows) if you wish.
 
-Several parameters control the behavior of this GitHub Action; they are described below.
+Several parameters control the behavior of Waystation; they are described below.
 
 
 ### `dry_run` (default: `false`)
@@ -130,7 +130,7 @@ If you find an issue, please submit it in [the GitHub issue tracker](https://git
 
 ## Contributing
 
-Your help and participation in enhancing Waystation is welcome!  Please visit the [guidelines for contributing](CONTRIBUTING.md) for some tips on getting started.
+Your help and participation in enhancing Waystation is welcome!  Please visit the [guidelines for contributing](https://github.com/caltechlibrary/waystation/blob/main/CONTRIBUTING.md) for some tips on getting started.
 
 
 ## License
