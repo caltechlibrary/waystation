@@ -1,4 +1,4 @@
-# Waystation<img width="10%" align="right" src="https://github.com/caltechlibrary/waystation/blob/main/.graphics/camera.svg"/>
+# Waystation<img align="right" width="10%" src="_static/media/camera.png">
 
 _Waystation_ is a [GitHub Action](https://docs.github.com/actions) that makes it easy to archive your repository's [GitHub Pages](https://docs.github.com/en/pages) site automatically in the Internet Archive's [Wayback Machine](https://web.archive.org).
 
@@ -116,7 +116,7 @@ If you find an issue, please submit it in [the GitHub issue tracker](https://git
 
 ## Contributing
 
-Your help and participation in enhancing Waystation is welcome!  Please visit the [guidelines for contributing](CONTRIBUTING.md) for some tips on getting started.
+Your help and participation in enhancing Waystation is welcome!  Please visit the [guidelines for contributing](https://github.com/caltechlibrary/waystation/blob/main/CONTRIBUTING.md) for some tips on getting started.
 
 
 ## License
