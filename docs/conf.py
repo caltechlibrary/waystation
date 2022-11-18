@@ -21,7 +21,6 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosectionlabel',
     'sphinx.ext.napoleon',
-    'sphinxcontrib.mermaid'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -39,7 +38,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'README.md',
 html_title = 'Waystation'
 html_short_title = "Home"
 
-html_logo = "_static/media/waystation-icon-white-sm.png"
+html_logo = ""
 html_favicon = "_static/media/favicon.ico"
 
 # The theme to use for HTML and HTML Help pages.
@@ -55,7 +54,7 @@ html_css_files   = ['css/custom.css']
 
 html_show_sourcelink = False
 html_sidebars = {
-    "**": ["globaltoc.html", "searchbox.html"]
+    "**": ["searchbox.html"]
 }
 
 # Show the last updated date in the footer using the default format.
