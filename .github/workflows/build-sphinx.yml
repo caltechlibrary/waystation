@@ -15,21 +15,26 @@ on:
   push:
     branches:
       - main
+  pull_request:
 
 jobs:
-  deploy:
-    runs-on: ubuntu-20.04
+  Workflow:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v3.1.0
+      - uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v4.3.0
+        uses: actions/setup-python@v4
         with:
           python-version: '3.8'
 
       - name: Upgrade pip
         run: |
-          # install pip=>20.1 to use "pip cache dir"
+          # Need pip=>20.1 to use "pip cache dir".
           python3 -m pip install --upgrade pip
 
       - name: Get pip cache dir
@@ -37,7 +42,7 @@ jobs:
         run: echo "dir=$(pip cache dir)" >> $GITHUB_OUTPUT
 
       - name: Cache dependencies
-        uses: actions/cache@v3.0.11
+        uses: actions/cache@v3
         with:
           path: ${{ steps.pip-cache.outputs.dir }}
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements-dev.txt') }}
@@ -45,9 +50,7 @@ jobs:
             ${{ runner.os }}-pip-
 
       - name: Install dependencies
-        run: |
-          python3 -m pip install "myst-parser[linkify]"
-          python3 -m pip install sphinx-material
+        run: python3 -m pip install -r ./requirements-dev.txt
 
       - name: Generate HTML files
         run: |
@@ -56,6 +59,7 @@ jobs:
 
       - name: Publish HTML files on GitHub pages
         uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/_build/html
