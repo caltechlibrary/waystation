@@ -1,0 +1,61 @@
+# =============================================================================
+# @file    build-myst.yml
+# @brief   GitHub Actions workflow to build FOLIAGE docs using MyST 
+# @author  Michael Hucka <mhucka@caltech.edu>
+# @license Please see the file named LICENSE in the project directory
+# @website https://github.com/caltechlibrary/waystation
+#
+# This workflow file was originally based on work by GitHub user "peaceiris":
+# https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-static-site-generators-with-python
+# =============================================================================
+
+name: Update docs on GitHub
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Upgrade pip
+        run: |
+          # install pip=>20.1 to use "pip cache dir"
+          python3 -m pip install --upgrade pip
+
+      - name: Get pip cache dir
+        id: pip-cache
+        run: echo "::set-output name=dir::$(pip cache dir)"
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.pip-cache.outputs.dir }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements-dev.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install "myst-parser[linkify]"
+          python3 -m pip install sphinx-material
+
+      - name: Generate HTML files
+        run: |
+          cd docs
+          make html
+
+      - name: Publish HTML files on GitHub pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/_build/html
