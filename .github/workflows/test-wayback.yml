@@ -1,0 +1,30 @@
+# =============================================================================
+# @file    test-wayback.yml
+# @brief   GitHub Actions workflow to test Jamie Magee's GH action "Wayback"
+# @author  Michael Hucka <mhucka@caltech.edu>
+# @license Please see the file named LICENSE in the project directory
+# @website https://github.com/caltechlibrary/waystation
+#
+# This workflow file was originally based on work by GitHub user "peaceiris":
+# https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-static-site-generators-with-python
+# =============================================================================
+
+name: "Test Wayback"
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Workflow:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run JamieMagee/wayback
+      uses: JamieMagee/wayback@v1.3.19
+      id: wayback
+      with:
+        url: https://caltechlibrary.github.io/waystation
+
+    - name: Print results
+      shell: bash
+      run: |
+        echo Wayback URL: ${{ steps.wayback.outputs.wayback_url }} >> $GITHUB_STEP_SUMMARY
