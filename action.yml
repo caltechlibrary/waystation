@@ -7,7 +7,7 @@
 # =============================================================================
 
 name: 'Waystation'
-description: 'Archive the GitHub Pages of a repository in the Wayback Machine'
+description: "Archive a repository's GitHub Pages in the Wayback Machine"
 author: 'Michael Hucka -- https://github.com/mhucka'
 branding:
   icon: camera
@@ -17,30 +17,25 @@ inputs:
   dry_run:
     description: 'Print what would be done without actually doing it.'
     default: true
-    type: boolean
     required: false
   save_errors:
     # Corresponds to "saveErrors" in the Wayback Machine GitHub Action.
     description: 'Whether the Wayback Machine should save pages that return HTTP status 4xx-5xx.'
     default: false
-    type: boolean
     required: false
   save_outlinks:
     # Corresponds to "saveOutlinks" in the Wayback Machine GitHub Action.
     description: 'Whether the Wayback Machine should save links to external web pages.'
     default: true
-    type: boolean
     required: false
   save_screenshot:
     # Corresponds to "saveScreenshot" in the Wayback Machine GitHub Action.
     description: 'Whether the Wayback Machine should save a screenshot of the front page.'
     default: true
-    type: boolean
     required: false
   debug:
     description: 'Print context and variables in the GitHub Actions log.'
     default: false
-    type: boolean
     required: false
   GITHUB_TOKEN:
     description: 'GitHub token (automatically created by GitHub).'
@@ -48,7 +43,7 @@ inputs:
     required: false
 
 runs:
-  using: "composite"
+  using: composite
   steps:
     - name: Get GitHub Pages URL.
       # This stores the URL in env.pages_url. The value will be "null" if
