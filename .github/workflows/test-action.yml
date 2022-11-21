@@ -19,7 +19,7 @@ jobs:
   Workflow:
     runs-on: ubuntu-latest
     steps:
-    - uses: ../
+    - uses: caltechlibrary/waystation@main
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         dry_run: false
