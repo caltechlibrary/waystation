@@ -1,6 +1,6 @@
 # =============================================================================
 # @file    build-myst.yml
-# @brief   GitHub Actions workflow to build FOLIAGE docs using MyST 
+# @brief   GitHub Actions workflow to build Waystation docs using MyST 
 # @author  Michael Hucka <mhucka@caltech.edu>
 # @license Please see the file named LICENSE in the project directory
 # @website https://github.com/caltechlibrary/waystation
