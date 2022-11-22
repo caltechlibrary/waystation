@@ -104,8 +104,8 @@ runs:
         echo Date and time of this run: $(date "+%F %T (%Z)")                >> $GITHUB_STEP_SUMMARY
         echo ━━━━━━━━━━━━━━━━━━━━━━━━━                                       >> $GITHUB_STEP_SUMMARY
         echo Note: sometimes the Wayback Machine takes extra long to         >> $GITHUB_STEP_SUMMARY
-        echo start archiving a site. If this run of Waystation produced      >> $GITHUB_STEP_SUMMARY
-        echo an empty URL in the Wayback Machine above, wait an hour         >> $GITHUB_STEP_SUMMARY
-        echo and then try to look up your GitHub Pages URL again by          >> $GITHUB_STEP_SUMMARY
-        echo using the link above.                                           >> $GITHUB_STEP_SUMMARY
+        echo start archiving a site. If there is no saved copy of the        >> $GITHUB_STEP_SUMMARY
+        echo GitHub Pages URL at the Wayback Machine URL above right         >> $GITHUB_STEP_SUMMARY
+        echo now, wait an hour and then try to look up your GitHub           >> $GITHUB_STEP_SUMMARY
+        echo Pages URL again by using the link above.                        >> $GITHUB_STEP_SUMMARY
         echo ━━━━━━━━━━━━━━━━━━━━━━━━━                                       >> $GITHUB_STEP_SUMMARY
