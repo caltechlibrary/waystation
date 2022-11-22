@@ -143,7 +143,7 @@ Software produced by the Caltech Library is Copyright © 2022 California Institu
 
 This work was funded by the California Institute of Technology Library.
 
-Waystation makes use of the excellent [Wayback Machine GitHub Action](https://github.com/marketplace/actions/wayback-machine) by [Jaime Magee](https://github.com/JamieMagee).
+Waystation makes use of the excellent [Wayback Machine GitHub Action](https://github.com/marketplace/actions/wayback-machine) by [Jamie Magee](https://github.com/JamieMagee).
 
 <div align="center">
   <br>
