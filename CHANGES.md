@@ -1,5 +1,10 @@
 # Change log for Waystation
 
+## Version 1.4
+
+This release adds a GitHub Pages documentation site for docs, which not only seems fitting considering the purpose of this GitHub Action, but also helps with testing. It also polishes up the GitHub Action a little bit.
+
+
 ## Version 1.3
 
 This version fixes a gaff in the step for getting the repository path.
