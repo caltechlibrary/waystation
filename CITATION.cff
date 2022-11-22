@@ -8,11 +8,11 @@ authors:
 abstract: GitHub Action to archive a repo's GitHub Pages in the Wayback Machine
 repository-code: "https://github.com/caltechlibrary/waystation"
 type: software
-version: 0.0.1
+version: 1.4.0
 license-url: "https://github.com/caltechlibrary/waystation/blob/main/LICENSE"
 keywords:
   - software
   - automation
   - archiving
-date-released: 2022-11-16
+date-released: 2022-11-21
 
