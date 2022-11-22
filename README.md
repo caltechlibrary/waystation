@@ -2,8 +2,9 @@
 
 _Waystation_ is a [GitHub Action](https://docs.github.com/actions) that makes it easy to archive your repository's [GitHub Pages](https://docs.github.com/en/pages) site automatically in the Internet Archive's [Wayback Machine](https://web.archive.org).
 
-[![License](https://img.shields.io/badge/License-BSD--like-lightgrey)](https://choosealicense.com/licenses/bsd-3-clause)
-[![Latest release](https://img.shields.io/github/v/release/caltechlibrary/waystation.svg?color=b44e88)](https://github.com/caltechlibrary/waystation/releases)
+[![License](https://img.shields.io/badge/License-BSD--like-darkblue)](https://choosealicense.com/licenses/bsd-3-clause)
+[![Latest release](https://img.shields.io/github/v/release/caltechlibrary/waystation.svg?color=b44e88&label=Release)](https://github.com/caltechlibrary/waystation/releases)
+[![GitHub marketplace](https://img.shields.io/badge/marketplace-Waystation-green?logo=github&color=e4722f&label=Marketplace)](https://github.com/marketplace/actions/waystation)
 
 
 ## Table of contents
@@ -25,7 +26,7 @@ Many projects use [GitHub Pages](https://docs.github.com/en/pages) for documenta
 
 Waystation (<ins><b>Way</b></ins>back <ins><b>s</b></ins>i<ins><b>t</b></ins>e <ins><b>a</b></ins>rchiving automa<ins><b>tion</b></ins>) automates the task of sending your project's [GitHub Pages](https://docs.github.com/en/pages) URL to the [Wayback Machine](https://web.archive.org). It's intended to be triggered on software releases in your repository and uses the [Wayback Machine GitHub Action](https://github.com/marketplace/actions/wayback-machine) to send your repository's configured GitHub Pages URL to the Wayback Machine, thereby ensuring that the latest copy of your site is archived. You can change the trigger condition if needed.
 
-### Why would you want to use it?
+### Why would you want to bother with this?
 
 GitHub is incredibly popular today, but the content is not guaranteed to be permanent; moreover, GitHub has in the past [changed the URLs and policies surrounding GitHub Pages](https://ws-dl.blogspot.com/2022/03/2022-03-30-github-is-not-archive-github.html)—and may do so again in the future. The Wayback Machine is a free digital archive of the World Wide Web founded by the [Internet Archive](https://en.wikipedia.org/wiki/Internet_Archive). Web pages saved in the Wayback Machine continue to exist even after the original project repository changes or is removed from the web, and they can be [searched for, shared, and linked to normally](https://help.archive.org/help/using-the-wayback-machine/). You can also view [previous versions of a site](https://archive.org/web/) if they were archived.
 
