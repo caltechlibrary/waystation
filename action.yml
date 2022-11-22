@@ -102,10 +102,10 @@ runs:
         echo GitHub Pages URL for the repository: ${{ env.pages_url }}       >> $GITHUB_STEP_SUMMARY
         echo **URL in the Wayback Machine**: ${{ env.wm_url }}               >> $GITHUB_STEP_SUMMARY
         echo Date and time of this run: $(date "+%F %T (%Z)")                >> $GITHUB_STEP_SUMMARY
-        echo ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓  >> $GITHUB_STEP_SUMMARY
-        echo ┃ Note: sometimes the Wayback Machine takes extra long to    ┃  >> $GITHUB_STEP_SUMMARY
-        echo ┃ start archiving a site. If this run of Waystation produced ┃  >> $GITHUB_STEP_SUMMARY
-        echo ┃ an empty URL in the Wayback Machine above, wait an hour    ┃  >> $GITHUB_STEP_SUMMARY
-        echo ┃ and then try to look up your GitHub Pages URL again by     ┃  >> $GITHUB_STEP_SUMMARY
-        echo ┃ using the link above.                                      ┃  >> $GITHUB_STEP_SUMMARY
-        echo ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛  >> $GITHUB_STEP_SUMMARY
+        echo ━━━━━━━━━━━━━━━━━━━━━━━━━                                       >> $GITHUB_STEP_SUMMARY
+        echo Note: sometimes the Wayback Machine takes extra long to         >> $GITHUB_STEP_SUMMARY
+        echo start archiving a site. If this run of Waystation produced      >> $GITHUB_STEP_SUMMARY
+        echo an empty URL in the Wayback Machine above, wait an hour         >> $GITHUB_STEP_SUMMARY
+        echo and then try to look up your GitHub Pages URL again by          >> $GITHUB_STEP_SUMMARY
+        echo using the link above.                                           >> $GITHUB_STEP_SUMMARY
+        echo ━━━━━━━━━━━━━━━━━━━━━━━━━                                       >> $GITHUB_STEP_SUMMARY
