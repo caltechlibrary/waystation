@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Run JamieMagee/wayback
-      uses: JamieMagee/wayback@v1.3.19
+      uses: JamieMagee/wayback@v1.3.28
       id: wayback
       with:
         url: https://caltechlibrary.github.io/waystation

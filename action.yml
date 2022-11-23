@@ -79,7 +79,7 @@ runs:
 
     - name: Proceed if this is not a dry run.
       if: startsWith(env.pages_url, 'null') != true && inputs.dry_run != true && inputs.dry_run != 'true'
-      uses: JamieMagee/wayback@v1.3.19
+      uses: JamieMagee/wayback@v1.3.28
       with:
         url: ${{ env.pages_url }}
         saveErrors: ${{ inputs.save_errors }}
