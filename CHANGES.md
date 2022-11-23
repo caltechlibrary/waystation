@@ -1,6 +1,11 @@
 # Change log for Waystation
 
-## Version 1.4
+## Version 1.5 (2022-11-22)
+
+This release updates the version of the [Wayback](https://github.com/marketplace/actions/wayback-machine) action used by Waystation to the latest version (thanks to PR #1 from [Jamie Magee](https://github.com/JamieMagee)), and corrects the misspelling of the author's name (thanks to PR #2 from [Jamie Magee](https://github.com/JamieMagee)).
+
+
+## Version 1.4 (2022-11-21)
 
 This release adds a GitHub Pages documentation site for docs, which not only seems fitting considering the purpose of this GitHub Action, but also helps with testing. It also polishes up the GitHub Action a little bit.
 
