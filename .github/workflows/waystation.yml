@@ -1,0 +1,17 @@
+name: "Waystation"
+run-name: Archive GitHub Pages in IA
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  Workflow:
+    name: Waystation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: caltechlibrary/waystation@main
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          debug: true
