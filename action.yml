@@ -14,7 +14,7 @@ branding:
 inputs:
   dry_run:
     description: 'Print what would be done without actually doing it.'
-    default: true
+    default: false
     required: false
   save_errors:
     # Corresponds to "saveErrors" in the Wayback Machine GitHub Action.
