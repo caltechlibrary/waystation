@@ -1,17 +1,18 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: Waystation – Wayback site archiving automation
 authors:
   - family-names: Hucka
     given-names: Michael
+    email: mhucka@caltech.edu
     orcid: https://orcid.org/0000-0001-9105-5960
+title: Waystation – Wayback site archiving automation
 abstract: GitHub Action to archive a repo's GitHub Pages in the Wayback Machine
-repository-code: "https://github.com/caltechlibrary/waystation"
-type: software
 version: 1.5
+date-released: 2022-11-22
+repository-code: "https://github.com/caltechlibrary/waystation"
 license-url: "https://github.com/caltechlibrary/waystation/blob/main/LICENSE"
+type: software
 keywords:
   - software
   - automation
   - archiving
-date-released: 2022-11-22
