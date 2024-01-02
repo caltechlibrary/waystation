@@ -1,10 +1,8 @@
-# =============================================================================
-# @file    action.yml
-# @brief   GitHub Action definition file for Waystation
-# @author  Michael Hucka <mhucka@caltech.edu>
-# @license Please see the file named LICENSE in the repository
-# @repo    https://github.com/caltechlibrary/waystation
-# =============================================================================
+# GitHub Actions definition for Waystation.
+#
+# Copyright 2022-2024 California Institute of Technology.
+# License: Modified BSD 3-clause – see file "LICENSE" in the project website.
+# Website: https://github.com/caltechlibrary/waystation
 
 name: 'Waystation'
 description: "Archive a repository's GitHub Pages in the Wayback Machine"

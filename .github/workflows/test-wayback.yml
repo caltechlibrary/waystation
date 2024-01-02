@@ -1,10 +1,8 @@
-# =============================================================================
-# @file    test-wayback.yml
-# @brief   GitHub Actions workflow to test Jamie Magee's GH action "Wayback"
-# @author  Michael Hucka <mhucka@caltech.edu>
-# @license Please see the file named LICENSE in the project directory
-# @website https://github.com/caltechlibrary/waystation
-# =============================================================================
+# GitHub Actions workflow to test Jamie Magee's GH action "Wayback".
+#
+# Copyright 2022-2024 California Institute of Technology.
+# License: Modified BSD 3-clause – see file "LICENSE" in the project website.
+# Website: https://github.com/caltechlibrary/waystation
 
 name: "Test Wayback"
 on:

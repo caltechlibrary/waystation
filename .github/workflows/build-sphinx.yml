@@ -1,13 +1,11 @@
-# =============================================================================
-# @file    build-myst.yml
-# @brief   GitHub Actions workflow to build Waystation docs using MyST 
-# @author  Michael Hucka <mhucka@caltech.edu>
-# @license Please see the file named LICENSE in the project directory
-# @website https://github.com/caltechlibrary/waystation
+# GitHub Actions workflow to build Waystation docs using MyST.
 #
+# Copyright 2022-2024 California Institute of Technology.
+# License: Modified BSD 3-clause – see file "LICENSE" in the project website.
+# Website: https://github.com/caltechlibrary/waystation
+
 # This workflow file was originally based on work by GitHub user "peaceiris":
 # https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-static-site-generators-with-python
-# =============================================================================
 
 name: Build Sphinx docs & publish on GitHub Pages
 
