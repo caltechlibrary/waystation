@@ -1,0 +1,23 @@
+# GitHub Actions workflow to test Waystation.
+#
+# Copyright 2022-2024 California Institute of Technology.
+# License: Modified BSD 3-clause – see file "LICENSE" in the project website.
+# Website: https://github.com/caltechlibrary/waystation
+
+name: "Waystation"
+run-name: Archive GitHub Pages in IA
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  Workflow:
+    name: Waystation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: caltechlibrary/waystation@develop
+        with:
+          debug: true
+          dry_run: true
