@@ -35,10 +35,6 @@ inputs:
     description: 'Print context and variables in the GitHub Actions log.'
     default: false
     required: false
-  GITHUB_TOKEN:
-    description: 'GitHub token (automatically created by GitHub).'
-    default: ${{ github.token }}
-    required: false
 
 runs:
   using: composite
@@ -48,7 +44,7 @@ runs:
       # no pages URL is returned for any reason.
       shell: bash
       run: |
-        echo pages_url=$(curl -s -H 'Accept: application/vnd.github+json' -H "Authorization: Bearer ${{ inputs.GITHUB_TOKEN }}" https://api.github.com/repos/${{ github.repository }}/pages | jq '.html_url' | tr -d '"') >> $GITHUB_ENV
+        echo pages_url=$(curl -s -H 'Accept: application/vnd.github+json' -H "Authorization: Bearer ${{github.token }}" https://api.github.com/repos/${{ github.repository }}/pages | jq '.html_url' | tr -d '"') >> $GITHUB_ENV
 
     - name: Dump GitHub Actions context and variables if debugging is on.
       if: inputs.debug == true || inputs.debug == 'true'
