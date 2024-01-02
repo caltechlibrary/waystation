@@ -2,7 +2,7 @@
 
 _Waystation_ is a [GitHub Action](https://docs.github.com/actions) that makes it easy to archive your repository's [GitHub Pages](https://docs.github.com/en/pages) site automatically in the Internet Archive's [Wayback Machine](https://web.archive.org).
 
-[![License](https://img.shields.io/badge/License-BSD--like-darkblue)](https://choosealicense.com/licenses/bsd-3-clause)
+[![License](https://img.shields.io/badge/License-BSD--like-lightgrey)](https://github.com/caltechlibrary/waystation/blob/main/LICENSE)
 [![Latest release](https://img.shields.io/github/v/release/caltechlibrary/waystation.svg?color=b44e88&label=Release)](https://github.com/caltechlibrary/waystation/releases)
 [![GitHub marketplace](https://img.shields.io/badge/marketplace-Waystation-green?logo=github&color=e4722f&label=Marketplace)](https://github.com/marketplace/actions/waystation)
 
@@ -136,7 +136,7 @@ Your help and participation in enhancing Waystation is welcome!  Please visit th
 
 ## License
 
-Software produced by the Caltech Library is Copyright © 2022 California Institute of Technology.  This software is freely distributed under a BSD-style license.  Please see the [LICENSE](LICENSE) file for more information.
+Software produced by the Caltech Library is Copyright © 2022 California Institute of Technology.  This software is freely distributed under a modified BSD 3-clause license.  Please see the [LICENSE](LICENSE) file for more information.
 
 
 ## Acknowledgments
