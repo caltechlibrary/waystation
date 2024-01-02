@@ -1,23 +1,43 @@
-# GitHub Actions workflow to test Waystation.
-#
-# Copyright 2022-2024 California Institute of Technology.
-# License: Modified BSD 3-clause – see file "LICENSE" in the project website.
-# Website: https://github.com/caltechlibrary/waystation
+# ╭─────────────────── Notice ── Notice ── Notice ───────────────────╮
+# │ This is a custom Baler workflow file. It is different from the   │
+# │ sample workflow suggested for users because it is designed to    │
+# │ allow testing Baler. DO NOT COPY THIS FILE; instead, use the     │
+# │ sample workflow file named "sample-workflow.yml" from the Baler  │
+# │ source repository at https://github.com/caltechlibrary/baler/.   │
+# ╰─────────────────── Notice ── Notice ── Notice ───────────────────╯
 
-name: "Waystation"
-run-name: Archive GitHub Pages in IA
+name: Test Waystation
+run-name: Send GitHub Pages to the Wayback Machine
 
 on:
-  release:
-    types: [published]
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Run without actually sending URLs"
+        type: boolean
+        default: true
+      debug:
+        default: true
+        type: boolean
+      save_errors:
+        default: true
+        type: boolean
+      save_outlinks:
+        default: true
+        type: boolean
+      save_screenshots:
+        default: true
+        type: boolean
 
 jobs:
   Workflow:
-    name: Waystation
+    name: Run Waystation
     runs-on: ubuntu-latest
     steps:
       - uses: caltechlibrary/waystation@develop
         with:
-          debug: true
-          dry_run: true
+          debug: ${{github.event.inputs.debug || true}}
+          dry_run: ${{github.event.inputs.dry_run || true}}
+          save_errors: ${{github.event.inputs.save_errors || false}}
+          save_outlinks: ${{github.event.inputs.save_outlinks || false}}
+          save_screenshot: ${{github.event.inputs.save_screenshot || false}}
