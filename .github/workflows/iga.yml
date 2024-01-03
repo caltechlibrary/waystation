@@ -1,0 +1,78 @@
+# GitHub Actions workflow for InvenioRDM GitHub Archiver version 1.2.2
+# This is available as the file "sample-workflow.yml" from the open-
+# source repository for IGA at https://github.com/caltechlibrary/iga/.
+
+# ╭────────────────────────────────────────────╮
+# │ Configure this section                     │
+# ╰────────────────────────────────────────────╯
+
+env:
+  # 👋🏻 Set the next variable to your InvenioRDM server address 👋🏻
+  INVENIO_SERVER: https://data.caltech.edu
+
+  # Set to an InvenioRDM record ID to mark release as a new version.
+  parent_record: none
+
+  # The variables below are other IGA options. Please see the docs.
+  community:     none
+  draft:         false
+  all_assets:    false
+  all_metadata:  false
+  debug:         false
+
+# ╭────────────────────────────────────────────╮
+# │ The rest of this file should be left as-is │
+# ╰────────────────────────────────────────────╯
+
+name: InvenioRDM GitHub Archiver
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "The release tag (empty = latest):"
+      parent_record:
+        description: "ID of parent record (for versioning):"
+      community:
+        description: "Name of InvenioRDM community (if any):"
+      draft:
+        description: "Mark the record as a draft"
+        type: boolean
+      all_assets:
+        description: "Attach all GitHub assets"
+        type: boolean
+      all_metadata:
+        description: "Include additional GitHub metadata"
+        type: boolean
+      debug:
+        description: "Print debug info in the GitHub log"
+        type: boolean
+
+run-name: Archive ${{inputs.release_tag || 'latest release'}} in InvenioRDM
+jobs:
+  run_iga:
+    name: "Send to ${{needs.get_repository.outputs.server}}"
+    runs-on: ubuntu-latest
+    needs: get_repository
+    steps:
+      - uses: caltechlibrary/iga@main
+        with:
+          INVENIO_SERVER: ${{env.INVENIO_SERVER}}
+          INVENIO_TOKEN:  ${{secrets.INVENIO_TOKEN}}
+          all_assets:     ${{github.event.inputs.all_assets || env.all_assets}}
+          all_metadata:   ${{github.event.inputs.all_metadata || env.all_metadata}}
+          debug:          ${{github.event.inputs.debug || env.debug}}
+          draft:          ${{github.event.inputs.draft || env.draft}}
+          community:      ${{github.event.inputs.community || env.community}}
+          parent_record:  ${{github.event.inputs.parent_record || env.parent_record}}
+          release_tag:    ${{github.event.inputs.release_tag || 'latest'}}
+  get_repository:
+    name: "Get repository name"
+    runs-on: ubuntu-latest
+    outputs:
+      server: ${{steps.parse.outputs.host}}
+    steps:
+      - name: Extract name from INVENIO_SERVER
+        id: parse
+        run: echo "host=$(cut -d'/' -f3 <<< ${{env.INVENIO_SERVER}} | cut -d':' -f1)" >> $GITHUB_OUTPUT
