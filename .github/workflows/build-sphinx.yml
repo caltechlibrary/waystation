@@ -11,12 +11,14 @@ name: Build Sphinx docs & publish on GitHub Pages
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
+    branches: ['main']
+    paths: ['docs/**']
+  release:
+    types: [published]
 
 jobs:
   Workflow:
+    name: Run Sphinx docs & publish GitHub Pages
     runs-on: ubuntu-22.04
     permissions:
       contents: write

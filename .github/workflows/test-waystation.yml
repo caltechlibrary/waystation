@@ -1,0 +1,37 @@
+# Workflow for testing Waystation.
+
+name: Test Waystation
+run-name: Archive GitHub Pages in the Wayback Machine
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Run without actually sending URLs"
+        type: boolean
+        default: true
+      debug:
+        default: true
+        type: boolean
+      save_errors:
+        default: true
+        type: boolean
+      save_outlinks:
+        default: true
+        type: boolean
+      save_screenshots:
+        default: true
+        type: boolean
+
+jobs:
+  Workflow:
+    name: Run Waystation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: caltechlibrary/waystation@develop
+        with:
+          debug: ${{github.event.inputs.debug || true}}
+          dry_run: ${{github.event.inputs.dry_run || true}}
+          save_errors: ${{github.event.inputs.save_errors || false}}
+          save_outlinks: ${{github.event.inputs.save_outlinks || false}}
+          save_screenshot: ${{github.event.inputs.save_screenshot || false}}

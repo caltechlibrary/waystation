@@ -23,21 +23,17 @@ inputs:
     required: false
   save_outlinks:
     # Corresponds to "saveOutlinks" in the Wayback Machine GitHub Action.
-    description: 'Whether the Wayback Machine should save links to external web pages.'
+    description: 'Tell the Wayback Machine to save links to external web pages.'
     default: true
     required: false
   save_screenshot:
     # Corresponds to "saveScreenshot" in the Wayback Machine GitHub Action.
-    description: 'Whether the Wayback Machine should save a screenshot of the front page.'
+    description: 'Tell the Wayback Machine to save a screenshot of the front page.'
     default: true
     required: false
   debug:
     description: 'Print context and variables in the GitHub Actions log.'
     default: false
-    required: false
-  GITHUB_TOKEN:
-    description: 'GitHub token (automatically created by GitHub).'
-    default: ${{ github.token }}
     required: false
 
 runs:
@@ -48,7 +44,7 @@ runs:
       # no pages URL is returned for any reason.
       shell: bash
       run: |
-        echo pages_url=$(curl -s -H 'Accept: application/vnd.github+json' -H "Authorization: Bearer ${{ inputs.GITHUB_TOKEN }}" https://api.github.com/repos/${{ github.repository }}/pages | jq '.html_url' | tr -d '"') >> $GITHUB_ENV
+        echo pages_url=$(curl -s -H 'Accept: application/vnd.github+json' -H "Authorization: Bearer ${{github.token}}" https://api.github.com/repos/${{github.repository}}/pages | jq '.html_url' | tr -d '"') >> $GITHUB_ENV
 
     - name: Dump GitHub Actions context and variables if debugging is on.
       if: inputs.debug == true || inputs.debug == 'true'
@@ -56,15 +52,14 @@ runs:
         # Setting this variable and then printing it below is not strictly
         # necessary; you could put the expression directly into the echo
         # command below. But when I do that, I get a doubling of the output.
-        GITHUB_CONTEXT: ${{ toJSON(github) }}
+        GITHUB_CONTEXT: ${{toJSON(github)}}
       shell: bash
       run: |
-        echo "dry_run = ${{ inputs.dry_run }}"
-        echo "pages_url = ${{ env.pages_url }}"
-        echo "save_errors = ${{ inputs.save_errors }}"
-        echo "save_outlinks = ${{ inputs.save_outlinks }}"
-        echo "save_screenshots = ${{ inputs.save_screenshots }}"
-        echo "debug = ${{ inputs.debug }}"
+        echo "dry_run = ${{inputs.dry_run}}"
+        echo "pages_url = ${{env.pages_url}}"
+        echo "save_outlinks = ${{inputs.save_outlinks}}"
+        echo "save_screenshots = ${{inputs.save_screenshots}}"
+        echo "debug = ${{inputs.debug}}"
         echo "====================="
         echo "$GITHUB_CONTEXT"
 
@@ -73,32 +68,30 @@ runs:
       uses: actions/github-script@v6.3.3
       with:
         script: |
-          core.setFailed("Could not retrieve the GitHub Pages URL for repository ${{ github.repository }}.")
+          core.setFailed("Could not retrieve the GitHub Pages URL for repository ${{github.repository}}.")
 
     - name: Proceed if this is not a dry run.
       if: startsWith(env.pages_url, 'null') != true && inputs.dry_run != true && inputs.dry_run != 'true'
       uses: JamieMagee/wayback@v1.3.28
       with:
-        url: ${{ env.pages_url }}
-        saveErrors: ${{ inputs.save_errors }}
-        saveOutlinks: ${{ inputs.save_outlinks }}
-        saveScreenshot: ${{ inputs.save_screenshot }}
+        url: ${{env.pages_url}}
+        saveOutlinks: ${{inputs.save_outlinks}}
+        saveScreenshot: ${{inputs.save_screenshot}}
 
     - name: Summarize the results of the run.
       shell: bash
       env:
-        wm_url: https://web.archive.org/web/${{ env.pages_url }}
+        wm_url: https://web.archive.org/web/${{env.pages_url}}
       run: |
         echo \#\# Results of sending the GitHub Pages to the Wayback Machine >> $GITHUB_STEP_SUMMARY
-        echo Dry run: ${{ inputs.dry_run }}                                  >> $GITHUB_STEP_SUMMARY
-        echo GitHub repository for this action: \`${{ github.repository }}\` >> $GITHUB_STEP_SUMMARY
-        echo GitHub Pages URL for the repository: ${{ env.pages_url }}       >> $GITHUB_STEP_SUMMARY
-        echo **URL in the Wayback Machine**: ${{ env.wm_url }}               >> $GITHUB_STEP_SUMMARY
+        echo Dry run: ${{inputs.dry_run}}                                    >> $GITHUB_STEP_SUMMARY
+        echo GitHub repository for this action: \`${{github.repository}}\`   >> $GITHUB_STEP_SUMMARY
+        echo GitHub Pages URL for the repository: ${{env.pages_url}}         >> $GITHUB_STEP_SUMMARY
+        echo **URL in the Wayback Machine**: ${{env.wm_url}}                 >> $GITHUB_STEP_SUMMARY
         echo Date and time of this run: $(date "+%F %T (%Z)")                >> $GITHUB_STEP_SUMMARY
-        echo ━━━━━━━━━━━━━━━━━━━━━━━━━                                       >> $GITHUB_STEP_SUMMARY
-        echo Note: sometimes the Wayback Machine takes extra long to         >> $GITHUB_STEP_SUMMARY
-        echo start archiving a site. If there is no saved copy of the        >> $GITHUB_STEP_SUMMARY
-        echo GitHub Pages URL at the Wayback Machine URL above               >> $GITHUB_STEP_SUMMARY
-        echo right now, wait an hour and then try to look up your            >> $GITHUB_STEP_SUMMARY
-        echo GitHub Pages URL again by using the link above.                 >> $GITHUB_STEP_SUMMARY
-        echo ━━━━━━━━━━━━━━━━━━━━━━━━━                                       >> $GITHUB_STEP_SUMMARY
+        echo ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                               >> $GITHUB_STEP_SUMMARY
+        echo Note: sometimes the Wayback Machine takes extra long to start   >> $GITHUB_STEP_SUMMARY
+        echo archiving a site. If your GitHub Pages URL is not yet found at  >> $GITHUB_STEP_SUMMARY
+        echo Wayback Machine URL above, wait for a time and then try to      >> $GITHUB_STEP_SUMMARY
+        echo look up your GitHub Pages URL again.                            >> $GITHUB_STEP_SUMMARY
+        echo ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━                               >> $GITHUB_STEP_SUMMARY

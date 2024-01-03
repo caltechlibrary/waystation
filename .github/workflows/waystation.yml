@@ -1,23 +1,28 @@
-# GitHub Actions workflow to run Waystation on this repository.
-#
-# Copyright 2022-2024 California Institute of Technology.
-# License: Modified BSD 3-clause – see file "LICENSE" in the project website.
-# Website: https://github.com/caltechlibrary/waystation
+# ╭─────────────────── Notice ── Notice ── Notice ───────────────────╮
+# │ This is a custom Waystation workflow file. It is different from  │
+# │ the sample workflow suggested for users. DO NOT COPY THIS FILE;  │
+# │ instead, use the sample workflow file "sample-workflow.yml" from │
+# │ the repository at https://github.com/caltechlibrary/waystation/. │
+# ╰─────────────────── Notice ── Notice ── Notice ───────────────────╯
 
-name: "Waystation"
-run-name: Archive GitHub Pages in IA
+name: Archive GitHub Pages
+run-name: Archive GitHub Pages in the Wayback Machine
 
 on:
   release:
     types: [published]
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Run without actually sending URLs"
+        type: boolean
 
 jobs:
-  Workflow:
-    name: Waystation
+  run-waystation:
+    name: Run Waystation
     runs-on: ubuntu-latest
     steps:
       - uses: caltechlibrary/waystation@main
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          dry_run: ${{github.event.inputs.dry_run || false}}
           debug: true
