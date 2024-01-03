@@ -77,7 +77,7 @@ Once you have created the workflow file and pushed it to GitHub, it's wise to do
 2. In the page shown by GitHub next, click the <kbd>Run workflow</kbd> button in the right-hand side of the blue strip<p align="center"><img src="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-run-workflow-button.png" alt="Screenshot of GitHub Actions workflow run button" width="75%"></p>
 3. In the pull-down, click the checkbox for "Run without actually sending URLs"<p align="center"><img src="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-workflow-options-circled.png" alt="Screenshot of GitHub Actions workflow menu" width="40%"></p>
 4. Click the green <kbd>Run workflow</kbd> button near the bottom
-5. Refresh the web page and a new line will be shown named after your workflow file"<p align="center"><img src="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-workflow-running.png" alt="Screenshot of GitHub Actions running" width="40%"></p>
+5. Refresh the web page and a new line will be shown named after your workflow file"<p align="center"><img src="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-workflow-running.png" alt="Screenshot of GitHub Actions running" width="90%"></p>
 6. Click the title of that workflow, to make GitHub show the progress and results of running Waystation
 
 
