@@ -3,7 +3,7 @@
 # repository at https://github.com/caltechlibrary/waystation
 
 name: Archive GitHub Pages
-run-name: Send GitHub Pages to the Wayback Machine
+run-name: Archive GitHub Pages in the Wayback Machine
 
 on:
   release:
