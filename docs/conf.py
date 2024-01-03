@@ -10,7 +10,7 @@
 # =============================================================================
 
 project = 'Waystation'
-copyright = '2022, Caltech Library'
+copyright = '2024, Caltech Library'
 author = 'Caltech Library'
 
 

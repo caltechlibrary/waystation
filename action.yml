@@ -16,6 +16,11 @@ inputs:
     description: 'Print what would be done without actually doing it.'
     default: false
     required: false
+  save_errors:
+    # Corresponds to "saveErrors" in the Wayback Machine GitHub Action.
+    description: 'Whether the Wayback Machine should save pages that return HTTP status 4xx-5xx.'
+    default: false
+    required: false
   save_outlinks:
     # Corresponds to "saveOutlinks" in the Wayback Machine GitHub Action.
     description: 'Tell the Wayback Machine to save links to external web pages.'
