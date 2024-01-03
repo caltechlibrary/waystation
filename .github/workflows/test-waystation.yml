@@ -1,10 +1,4 @@
-# ╭─────────────────── Notice ── Notice ── Notice ───────────────────╮
-# │ This is a custom Baler workflow file. It is different from the   │
-# │ sample workflow suggested for users because it is designed to    │
-# │ allow testing Baler. DO NOT COPY THIS FILE; instead, use the     │
-# │ sample workflow file named "sample-workflow.yml" from the Baler  │
-# │ source repository at https://github.com/caltechlibrary/baler/.   │
-# ╰─────────────────── Notice ── Notice ── Notice ───────────────────╯
+# Workflow for testing Waystation.
 
 name: Test Waystation
 run-name: Send GitHub Pages to the Wayback Machine
