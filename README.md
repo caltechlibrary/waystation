@@ -24,7 +24,7 @@ Many projects use [GitHub Pages](https://docs.github.com/en/pages) for documenta
 
 ### How does Waystation work?
 
-Waystation (<em><ins><b>Way</b></ins>back <ins><b>s</b></ins>i<ins><b>t</b></ins>e <ins><b>a</b></ins>rchiving automa<ins><b>tion</b></ins></em>) sends your project's [GitHub Pages](https://docs.github.com/en/pages) URL to the [Wayback Machine](https://web.archive.org). It's intended to be triggered on software releases in your repository and uses the [Wayback Machine GitHub Action](https://github.com/marketplace/actions/wayback-machine) to send your repository's configured GitHub Pages URL to the Wayback Machine, thereby ensuring that the latest copy of your site is archived. You can change the trigger condition if needed.
+Waystation (a loose acronym of <em><ins><b>Way</b></ins>back <ins><b>s</b></ins>i<ins><b>t</b></ins>e <ins><b>a</b></ins>rchiving automa<ins><b>tion</b></ins></em>) sends your project's [GitHub Pages](https://docs.github.com/en/pages) URL to the [Wayback Machine](https://web.archive.org). It's intended to be triggered on software releases in your repository and uses the [Wayback Machine GitHub Action](https://github.com/marketplace/actions/wayback-machine) to send your repository's configured GitHub Pages URL to the Wayback Machine, thereby ensuring that the latest copy of your site is archived. You can change the trigger condition if needed.
 
 ### Why would you want to bother with this?
 
@@ -41,7 +41,7 @@ To use Waystation, you need to create a GitHub Actions workflow file in your rep
 2. In the `.github/workflows` directory, create a file named `archive-github-pages.yml`.
 3. Copy and paste the [following content](https://raw.githubusercontent.com/caltechlibrary/waystation/main/sample-workflow.yml) into the file:
     ```yaml
-    # GitHub Actions workflow for Waystation version 1.5.0.
+    # GitHub Actions workflow for Waystation version 1.6.0.
     # Available as the file "sample-workflow.yml" from the software
     # repository at https://github.com/caltechlibrary/waystation
 
@@ -77,7 +77,7 @@ Once you have created the workflow file and pushed it to GitHub, it's wise to do
 2. In the page shown by GitHub next, click the <kbd>Run workflow</kbd> button in the right-hand side of the blue strip<p align="center"><img src="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-run-workflow-button.png" alt="Screenshot of GitHub Actions workflow run button" width="75%"></p>
 3. In the pull-down, click the checkbox for "Run without actually sending URLs"<p align="center"><img src="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-workflow-options-circled.png" alt="Screenshot of GitHub Actions workflow menu" width="40%"></p>
 4. Click the green <kbd>Run workflow</kbd> button near the bottom
-5. Refresh the web page and a new line will be shown named after your workflow file"<p align="center"><img src="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-workflow-running.png" alt="Screenshot of GitHub Actions running" width="90%"></p>
+5. Refresh the web page and a new line will be shown named after your workflow file<p align="center"><img src="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-workflow-running.png" alt="Screenshot of GitHub Actions running" width="90%"></p>
 6. Click the title of that workflow, to make GitHub show the progress and results of running Waystation
 
 
@@ -90,7 +90,7 @@ Several optional parameters control the behavior of Waystation; they are describ
 
 ### `dry_run` (default: `false`)
 
-Setting the parameter `dry_run` to `true` will cause the action to execute without sending the URL to the Wayback Machine. This mainly useful for testing, especially if you want to try different trigger conditions.
+Setting the parameter `dry_run` to `true` will cause the action to execute without sending the URL to the Wayback Machine. This is mainly useful for testing, especially if you want to try different trigger conditions.
 
 The [sample workflow file](https://raw.githubusercontent.com/caltechlibrary/waystation/main/sample-workflow.yml) (shown [above](#add-the-workflow-file-to-your-repository)) includes a `dry_run` parameter checkbox when invoked manually. You can use that to set the value on an individual per-run basis. To change the default value (for example, when experimenting with different trigger conditions), you can do so by changing the `false` to `true` in the last line of the sample workflow. That is, change the last line from
 
