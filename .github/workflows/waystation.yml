@@ -11,6 +11,11 @@ run-name: Send GitHub Pages to the Wayback Machine
 on:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Run without actually sending URLs"
+        type: boolean
 
 jobs:
   run-waystation:
@@ -19,4 +24,5 @@ jobs:
     steps:
       - uses: caltechlibrary/waystation@main
         with:
+          dry_run: ${{github.event.inputs.dry_run || false}}
           debug: true
