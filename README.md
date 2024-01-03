@@ -46,7 +46,7 @@ To use Waystation, you need to create a GitHub Actions workflow file in your rep
     # repository at https://github.com/caltechlibrary/waystation
 
     name: Archive GitHub Pages
-    run-name: Send GitHub Pages to the Wayback Machine
+    run-name: Archive GitHub Pages in the Wayback Machine
 
     on:
       release:
@@ -73,12 +73,12 @@ To use Waystation, you need to create a GitHub Actions workflow file in your rep
 
 Once you have created the workflow file and pushed it to GitHub, it's wise to do a dry run, in order to test that things work as expected.
 
-1. Go to the _Actions_ tab in your repository and click on the workflow named "Archive GitHub Pages" in the sidebar on the left<p align="center"><img src="https://github.com/caltechlibrary/waystation/raw/main/docs/_static/media/github-run-workflow.png" alt="Screenshot of GitHub actions workflow list" width="90%"></p>
-2. Click the <kbd>Run workflow</kbd> button in the right-hand side of the blue strip
-3. In the pull-down, click the checkbox for "Run without actually sending URLs"<p align="center"><img src="https://github.com/caltechlibrary/waystation/raw/main/docs/_static/media/github-workflow-options-circled.png" alt="Screenshot of GitHub Actions workflow menu" width="40%"></p>
+1. Go to the _Actions_ tab in your repository and click on the workflow named "Archive GitHub Pages" in the sidebar on the left<p align="center"><img src="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-run-workflow.png" alt="Screenshot of GitHub actions workflow list" width="90%"></p>
+2. In the page shown by GitHub next, click the <kbd>Run workflow</kbd> button in the right-hand side of the blue strip<p align="center"><img src="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-run-workflow-button.png" alt="Screenshot of GitHub Actions workflow run button" width="75%"></p>
+3. In the pull-down, click the checkbox for "Run without actually sending URLs"<p align="center"><img src="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-workflow-options-circled.png" alt="Screenshot of GitHub Actions workflow menu" width="40%"></p>
 4. Click the green <kbd>Run workflow</kbd> button near the bottom
-5. Refresh the web page and a new line will be shown named after your workflow file<p align="center"><img src="https://github.com/caltechlibrary/waystation/raw/main/docs/_static/media/github-running-workflow.png" alt="Screenshot of a running workflow in GitHub Actions" width="90%"></p>
-6. Click the title of the workflow to make GitHub show the Waystation workflow progress and results
+5. Refresh the web page and a new line will be shown named after your workflow file"<p align="center"><img src="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-workflow-running.png" alt="Screenshot of GitHub Actions running" width="40%"></p>
+6. Click the title of that workflow, to make GitHub show the progress and results of running Waystation
 
 
 ## Usage
