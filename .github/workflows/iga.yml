@@ -11,7 +11,7 @@ env:
   INVENIO_SERVER: https://data.caltech.edu
 
   # Set to an InvenioRDM record ID to mark release as a new version.
-  parent_record: none
+  parent_record: 10.22002/hy6ag-xw238
 
   # The variables below are other IGA options. Please see the docs.
   community:     none
