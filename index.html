@@ -219,92 +219,117 @@
 <p>Many projects use <a class="reference external" href="https://docs.github.com/en/pages">GitHub Pages</a> for documentation and other purposes. GitHub Pages are wonderful, but they are not archived. To help ensure long-term access to your GitHub Pages, you may want to preserve them in the Internet Archive’s <a class="reference external" href="https://web.archive.org">Wayback Machine</a>. That’s the purpose of this GitHub Action.</p>
 <section id="how-does-waystation-work">
 <h3 id="how-does-waystation-work">How does Waystation work?<a class="headerlink" href="#how-does-waystation-work" title="Permalink to this heading">¶</a></h3>
-<p>Waystation (<ins><b>Way</b></ins>back <ins><b>s</b></ins>i<ins><b>t</b></ins>e <ins><b>a</b></ins>rchiving automa<ins><b>tion</b></ins>) automates the task of sending your project’s <a class="reference external" href="https://docs.github.com/en/pages">GitHub Pages</a> URL to the <a class="reference external" href="https://web.archive.org">Wayback Machine</a>. It’s intended to be triggered on software releases in your repository and uses the <a class="reference external" href="https://github.com/marketplace/actions/wayback-machine">Wayback Machine GitHub Action</a> to send your repository’s configured GitHub Pages URL to the Wayback Machine, thereby ensuring that the latest copy of your site is archived. You can change the trigger condition if needed.</p>
+<p>Waystation (<em><ins><b>Way</b></ins>back <ins><b>s</b></ins>i<ins><b>t</b></ins>e <ins><b>a</b></ins>rchiving automa<ins><b>tion</b></ins></em>) sends your project’s <a class="reference external" href="https://docs.github.com/en/pages">GitHub Pages</a> URL to the <a class="reference external" href="https://web.archive.org">Wayback Machine</a>. It’s intended to be triggered on software releases in your repository and uses the <a class="reference external" href="https://github.com/marketplace/actions/wayback-machine">Wayback Machine GitHub Action</a> to send your repository’s configured GitHub Pages URL to the Wayback Machine, thereby ensuring that the latest copy of your site is archived. You can change the trigger condition if needed.</p>
 </section>
-<section id="why-would-you-want-to-use-it">
-<h3 id="why-would-you-want-to-use-it">Why would you want to use it?<a class="headerlink" href="#why-would-you-want-to-use-it" title="Permalink to this heading">¶</a></h3>
-<p>GitHub is incredibly popular today, but the content is not guaranteed to be permanent; moreover, GitHub has in the past <a class="reference external" href="https://ws-dl.blogspot.com/2022/03/2022-03-30-github-is-not-archive-github.html">changed the URLs and policies surrounding GitHub Pages</a>—and may do so again in the future. The Wayback Machine is a free digital archive of the World Wide Web founded by the <a class="reference external" href="https://en.wikipedia.org/wiki/Internet_Archive">Internet Archive</a>. Web pages saved in the Wayback Machine continue to exist even after the original project repository changes or is removed from the web, and they can be <a class="reference external" href="https://help.archive.org/help/using-the-wayback-machine/">searched for, shared, and linked to normally</a>. You can also view <a class="reference external" href="https://archive.org/web/">previous versions of a site</a> if they were archived.</p>
+<section id="why-would-you-want-to-bother-with-this">
+<h3 id="why-would-you-want-to-bother-with-this">Why would you want to bother with this?<a class="headerlink" href="#why-would-you-want-to-bother-with-this" title="Permalink to this heading">¶</a></h3>
+<p>GitHub is incredibly popular today, but the content is not guaranteed to be permanent; moreover, GitHub has in the past <a class="reference external" href="https://ws-dl.blogspot.com/2022/03/2022-03-30-github-is-not-archive-github.html">changed the URLs and policies surrounding GitHub Pages</a>—and may do so again in the future. The Wayback Machine is a free digital archive of the World Wide Web founded by the <a class="reference external" href="https://en.wikipedia.org/wiki/Internet_Archive">Internet Archive</a>. Web pages saved in the Wayback Machine continue to exist even after the original project repository changes or is removed from the web, and the archived pages can be <a class="reference external" href="https://help.archive.org/help/using-the-wayback-machine/">searched for, shared, and linked to normally</a>. You can also view <a class="reference external" href="https://archive.org/web/">previous versions of a site</a> if they were archived.</p>
 </section>
 </section>
 <section id="installation">
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h2>
-<p>This action is available from the <a class="reference external" href="https://github.com/marketplace?type=&amp;amp;verification=&amp;amp;query=waystation">GitHub Marketplace</a>. Once you find the page in the GitHub Marketplace, do the following:</p>
+<p>To use Waystation, you need to create a GitHub Actions workflow file in your repository. Follow these simple steps.</p>
+<section id="add-the-workflow-file-to-your-repository">
+<h3 id="add-the-workflow-file-to-your-repository">Add the workflow file to your repository<a class="headerlink" href="#add-the-workflow-file-to-your-repository" title="Permalink to this heading">¶</a></h3>
 <ol class="arabic">
 <li><p>In the main branch of your repository, create a <code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code> directory if this directory does not already exist.</p></li>
 <li><p>In the <code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code> directory, create a file named <code class="docutils literal notranslate"><span class="pre">archive-github-pages.yml</span></code>.</p></li>
-<li><p>Copy and paste the following content into the file:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">on</span><span class="p">:</span>
+<li><p>Copy and paste the <a class="reference external" href="https://raw.githubusercontent.com/caltechlibrary/waystation/main/sample-workflow.yml">following content</a> into the file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># GitHub Actions workflow for Waystation version 1.5.0.</span>
+<span class="c1"># Available as the file "sample-workflow.yml" from the software</span>
+<span class="c1"># repository at https://github.com/caltechlibrary/waystation</span>
+
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Archive GitHub Pages</span>
+<span class="nt">run-name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Archive GitHub Pages in the Wayback Machine</span>
+
+<span class="nt">on</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">release</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">published</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">inputs</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">dry_run</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Run</span><span class="nv"> </span><span class="s">without</span><span class="nv"> </span><span class="s">actually</span><span class="nv"> </span><span class="s">sending</span><span class="nv"> </span><span class="s">URLs"</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">boolean</span>
+
 <span class="nt">jobs</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">Workflow</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">run-waystation</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Waystation</span>
 <span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
 <span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caltechlibrary/waystation@main</span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">GITHUB_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
+<span class="w">          </span><span class="nt">dry_run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{github.event.inputs.dry_run || false}}</span>
 </pre></div>
 </div>
 </li>
 <li><p>Save the file, add it to your git repository, and commit the changes.</p></li>
 <li><p>(If you did the steps above outside of GitHub) Push your repository changes to GitHub.</p></li>
 </ol>
-<p>Refer to the next section for more information.</p>
+</section>
+<section id="test-the-workflow">
+<h3 id="test-the-workflow">Test the workflow<a class="headerlink" href="#test-the-workflow" title="Permalink to this heading">¶</a></h3>
+<p>Once you have created the workflow file and pushed it to GitHub, it’s wise to do a dry run, in order to test that things work as expected.</p>
+<ol class="arabic simple">
+<li><p>Go to the <em>Actions</em> tab in your repository and click on the workflow named “Archive GitHub Pages” in the sidebar on the left<p align="center"><a class="reference internal" href="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-run-workflow.png"><img alt="Screenshot of GitHub actions workflow list" src="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-run-workflow.png" style="width: 90%;"/></a></p></p></li>
+<li><p>In the page shown by GitHub next, click the <kbd>Run workflow</kbd> button in the right-hand side of the blue strip<p align="center"><a class="reference internal" href="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-run-workflow-button.png"><img alt="Screenshot of GitHub Actions workflow run button" src="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-run-workflow-button.png" style="width: 75%;"/></a></p></p></li>
+<li><p>In the pull-down, click the checkbox for “Run without actually sending URLs”<p align="center"><a class="reference internal" href="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-workflow-options-circled.png"><img alt="Screenshot of GitHub Actions workflow menu" src="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-workflow-options-circled.png" style="width: 40%;"/></a></p></p></li>
+<li><p>Click the green <kbd>Run workflow</kbd> button near the bottom</p></li>
+<li><p>Refresh the web page and a new line will be shown named after your workflow file”<p align="center"><a class="reference internal" href="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-workflow-running.png"><img alt="Screenshot of GitHub Actions running" src="https://github.com/caltechlibrary/waystation/raw/develop/docs/_static/media/github-workflow-running.png" style="width: 90%;"/></a></p></p></li>
+<li><p>Click the title of that workflow, to make GitHub show the progress and results of running Waystation</p></li>
+</ol>
+</section>
 </section>
 <section id="usage">
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permalink to this heading">¶</a></h2>
-<p>The trigger condition that causes Waystation to run is determined by the <code class="docutils literal notranslate"><span class="pre">on</span></code> statement in your <code class="docutils literal notranslate"><span class="pre">archive-github-pages.yml</span></code> workflow file. The examples shown here use <code class="docutils literal notranslate"><span class="pre">on:</span> <span class="pre">release</span></code> to trigger when software is released, but you can use <a class="reference external" href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows">other trigger events defined by GitHub</a> if you wish.</p>
-<p>Several parameters control the behavior of Waystation; they are described below.</p>
+<p>Once installed, the sample workflow will run automatically the next time you publish a release on GitHub. The trigger condition that causes Waystation to run automatically is determined by the <code class="docutils literal notranslate"><span class="pre">on</span></code> statement in your <code class="docutils literal notranslate"><span class="pre">archive-github-pages.yml</span></code> workflow file. The examples shown here use <code class="docutils literal notranslate"><span class="pre">on:</span> <span class="pre">release</span></code> to trigger when a release is published, but you can use <a class="reference external" href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows">other trigger events defined by GitHub</a> if you wish.</p>
+<p>Several optional parameters control the behavior of Waystation; they are described below.</p>
 <section id="dry-run-default-false">
 <h3 id="dry-run-default-false"><code class="docutils literal notranslate"><span class="pre">dry_run</span></code> (default: <code class="docutils literal notranslate"><span class="pre">false</span></code>)<a class="headerlink" href="#dry-run-default-false" title="Permalink to this heading">¶</a></h3>
-<p>Setting the parameter <code class="docutils literal notranslate"><span class="pre">dry_run</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code> will cause the action to execute without sending the URL to the Wayback Machine. This is useful during testing, especially if you want to try different trigger conditions.</p>
-<p>Here is an example workflow definition using <code class="docutils literal notranslate"><span class="pre">dry_run</span></code>:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># .github/workflows/archive-github-pages.yml</span>
-<span class="nt">on</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">release</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">published</span><span class="p p-Indicator">]</span>
-<span class="nt">jobs</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">Workflow</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
-<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caltechlibrary/waystation@main</span>
-<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">GITHUB_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
-<span class="w">          </span><span class="nt">dry_run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<p>Setting the parameter <code class="docutils literal notranslate"><span class="pre">dry_run</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code> will cause the action to execute without sending the URL to the Wayback Machine. This mainly useful for testing, especially if you want to try different trigger conditions.</p>
+<p>The <a class="reference external" href="https://raw.githubusercontent.com/caltechlibrary/waystation/main/sample-workflow.yml">sample workflow file</a> (shown <a class="reference internal" href="#add-the-workflow-file-to-your-repository"><span class="xref myst">above</span></a>) includes a <code class="docutils literal notranslate"><span class="pre">dry_run</span></code> parameter checkbox when invoked manually. You can use that to set the value on an individual per-run basis. To change the default value (for example, when experimenting with different trigger conditions), you can do so by changing the <code class="docutils literal notranslate"><span class="pre">false</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code> in the last line of the sample workflow. That is, change the last line from</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dry_run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{github.event.inputs.dry_run || false}}</span>
+</pre></div>
+</div>
+<p>to</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">dry_run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{github.event.inputs.dry_run || true}}</span>
 </pre></div>
 </div>
 </section>
 <section id="debug-default-false">
 <h3 id="debug-default-false"><code class="docutils literal notranslate"><span class="pre">debug</span></code> (default: <code class="docutils literal notranslate"><span class="pre">false</span></code>)<a class="headerlink" href="#debug-default-false" title="Permalink to this heading">¶</a></h3>
-<p>Setting the parameter <code class="docutils literal notranslate"><span class="pre">debug</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code> will cause the action to print the values of the input variables
-and the GitHub context. This is useful for debugging the workflow.</p>
-<p>Here is an example workflow definition using <code class="docutils literal notranslate"><span class="pre">debug</span></code>:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">on</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">release</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">published</span><span class="p p-Indicator">]</span>
-<span class="nt">jobs</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">Workflow</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
-<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caltechlibrary/waystation@main</span>
-<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">GITHUB_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span>
-<span class="w">          </span><span class="nt">dry_run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<p>Passing the parameter <code class="docutils literal notranslate"><span class="pre">debug</span></code> with a value of <code class="docutils literal notranslate"><span class="pre">true</span></code> will cause Waystation to print the values of the input variables and the GitHub context at run time. This is useful for debugging the workflow. To set the <code class="docutils literal notranslate"><span class="pre">debug</span></code> parameter, add it as part of the <code class="docutils literal notranslate"><span class="pre">with:</span></code> block in the workflow file. For example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">- uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caltechlibrary/waystation@main</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">dry_run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{github.event.inputs.dry_run || false}}</span>
 <span class="w">          </span><span class="nt">debug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 </pre></div>
 </div>
 </section>
-<section id="save-errors-default-false">
-<h3 id="save-errors-default-false"><code class="docutils literal notranslate"><span class="pre">save_errors</span></code> (default: <code class="docutils literal notranslate"><span class="pre">false</span></code>)<a class="headerlink" href="#save-errors-default-false" title="Permalink to this heading">¶</a></h3>
-<p>This corresponds to the parameter <a class="reference external" href="https://github.com/JamieMagee/wayback#saveerrors"><code class="docutils literal notranslate"><span class="pre">saveErrors</span></code></a> in the <a class="reference external" href="https://github.com/marketplace/actions/wayback-machine">Wayback Machine GitHub Action</a>. A value of <code class="docutils literal notranslate"><span class="pre">true</span></code> will make the action tell the Wayback Machine to save web pages that return an HTTP status code in the range 4xx or 5xx. The default is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
-</section>
 <section id="save-outlinks-default-true">
 <h3 id="save-outlinks-default-true"><code class="docutils literal notranslate"><span class="pre">save_outlinks</span></code> (default: <code class="docutils literal notranslate"><span class="pre">true</span></code>)<a class="headerlink" href="#save-outlinks-default-true" title="Permalink to this heading">¶</a></h3>
-<p>This corresponds to the parameter <a class="reference external" href="https://github.com/JamieMagee/wayback#saveOutlinks"><code class="docutils literal notranslate"><span class="pre">saveOutlinks</span></code></a> in the <a class="reference external" href="https://github.com/marketplace/actions/wayback-machine">Wayback Machine GitHub Action</a>. A value of <code class="docutils literal notranslate"><span class="pre">true</span></code> will make the action tell the Wayback Machine to archive external pages that are linked to from your GitHub Pages. The default in Waystation is <code class="docutils literal notranslate"><span class="pre">true</span></code> (unlike the default in the Wayback Machine GitHub Action) because the author finds this useful in producing a more complete archive of a GitHub Pages site.</p>
+<p>This corresponds to the parameter <a class="reference external" href="https://github.com/JamieMagee/wayback#saveOutlinks"><code class="docutils literal notranslate"><span class="pre">saveOutlinks</span></code></a> in the <a class="reference external" href="https://github.com/marketplace/actions/wayback-machine">Wayback Machine GitHub Action</a>. A value of <code class="docutils literal notranslate"><span class="pre">true</span></code> will make the action tell the Wayback Machine to archive external pages that are linked to from your GitHub Pages. The default in Waystation is <code class="docutils literal notranslate"><span class="pre">true</span></code> because Waystation’s author finds this useful in producing a more complete archive of a GitHub Pages site. To set the <code class="docutils literal notranslate"><span class="pre">save_outlinks</span></code> parameter, add it as part of the <code class="docutils literal notranslate"><span class="pre">with:</span></code> block in the workflow file. For example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">- uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caltechlibrary/waystation@main</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">dry_run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{github.event.inputs.dry_run || false}}</span>
+<span class="w">          </span><span class="nt">save_outlinks</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</pre></div>
+</div>
 </section>
 <section id="save-screenshot-default-true">
 <h3 id="save-screenshot-default-true"><code class="docutils literal notranslate"><span class="pre">save_screenshot</span></code> (default: <code class="docutils literal notranslate"><span class="pre">true</span></code>)<a class="headerlink" href="#save-screenshot-default-true" title="Permalink to this heading">¶</a></h3>
-<p>This corresponds to the parameter <a class="reference external" href="https://github.com/JamieMagee/wayback#saveScreenshot"><code class="docutils literal notranslate"><span class="pre">saveScreenshot</span></code></a> in the <a class="reference external" href="https://github.com/marketplace/actions/wayback-machine">Wayback Machine GitHub Action</a>. A value of <code class="docutils literal notranslate"><span class="pre">true</span></code> will make the action tell the Wayback Machine to save a screenshot of the page located at the GitHub Pages URL. The default in Waystation is <code class="docutils literal notranslate"><span class="pre">true</span></code> (unlike the default in the Wayback Machine GitHub Action) because the author finds this useful in producing a more complete archive of a GitHub Pages site.</p>
+<p>This corresponds to the parameter <a class="reference external" href="https://github.com/JamieMagee/wayback#saveScreenshot"><code class="docutils literal notranslate"><span class="pre">saveScreenshot</span></code></a> in the <a class="reference external" href="https://github.com/marketplace/actions/wayback-machine">Wayback Machine GitHub Action</a>. A value of <code class="docutils literal notranslate"><span class="pre">true</span></code> will make the action tell the Wayback Machine to save a screenshot of the page located at the GitHub Pages URL. The default in Waystation is <code class="docutils literal notranslate"><span class="pre">true</span></code> because Waystation’s author finds this useful in producing a more complete archive of a GitHub Pages site. To set the <code class="docutils literal notranslate"><span class="pre">save_screenshot</span></code> parameter, add it as part of the <code class="docutils literal notranslate"><span class="pre">with:</span></code> block in the workflow file. For example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">- uses</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caltechlibrary/waystation@main</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">with</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">dry_run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{github.event.inputs.dry_run || false}}</span>
+<span class="w">          </span><span class="nt">save_screenshot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="getting-help">
@@ -317,7 +342,7 @@ and the GitHub context. This is useful for debugging the workflow.</p>
 </section>
 <section id="license">
 <h2 id="license">License<a class="headerlink" href="#license" title="Permalink to this heading">¶</a></h2>
-<p>Software produced by the Caltech Library is Copyright © 2022 California Institute of Technology.  This software is freely distributed under a BSD-style license.  Please see the <a class="reference internal" href="#license"><span class="std std-ref">LICENSE</span></a> file for more information.</p>
+<p>Software produced by the Caltech Library is Copyright © 2022–2024 California Institute of Technology.  This software is freely distributed under a modified BSD 3-clause license.  Please see the <a class="reference internal" href="#license"><span class="std std-ref">LICENSE</span></a> file for more information.</p>
 </section>
 <section id="acknowledgments">
 <h2 id="acknowledgments">Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this heading">¶</a></h2>
