@@ -3,8 +3,9 @@
 _Waystation_ is a [GitHub Action](https://docs.github.com/actions) that makes it easy to archive your repository's [GitHub Pages](https://docs.github.com/en/pages) site automatically in the Internet Archive's [Wayback Machine](https://web.archive.org).
 
 [![License](https://img.shields.io/badge/License-BSD--like-lightgrey?style=flat-square)](https://github.com/caltechlibrary/waystation/blob/main/LICENSE)
+![GitHub](https://img.shields.io/badge/GitHub-%23000000.svg?logo=github&label=Actions&logoColor=white&style=flat-square)
 [![Latest release](https://img.shields.io/github/v/release/caltechlibrary/waystation.svg?color=b44e88&label=Release&style=flat-square)](https://github.com/caltechlibrary/waystation/releases)
-[![DOI](https://img.shields.io/badge/dynamic/json.svg?label=DOI&style=flat-square&colorA=gray&colorB=navy&query=$.pids.doi.identifier&uri=https://data.caltech.edu/api/records/hy6ag-xw238)](https://data.caltech.edu/records/hy6ag-xw238)
+[![DOI](https://img.shields.io/badge/dynamic/json.svg?label=DOI&style=flat-square&colorA=gray&colorB=navy&query=$.pids.doi.identifier&uri=https://data.caltech.edu/api/records/hy6ag-xw238/versions/latest)](https://data.caltech.edu/records/hy6ag-xw238/latest)
 [![GitHub marketplace](https://img.shields.io/badge/marketplace-Waystation-green?logo=github&color=e4722f&style=flat-square&label=Marketplace)](https://github.com/marketplace/actions/waystation)
 
 
