@@ -1,6 +1,6 @@
-# Rules for files and subdirectories to be ignored by git.
+# Summary: rules for files and subdirectories to be ignored by git.
 #
-# Copyright 2022-2024 California Institute of Technology.
+# Copyright 2024 California Institute of Technology.
 # License: Modified BSD 3-clause – see file "LICENSE" in the project website.
 # Website: https://github.com/caltechlibrary/waystation
 #
@@ -8,10 +8,10 @@
 # │ The recommended approach is to add ONLY project-specific rules to the     │
 # │ .gitignore of a repo. Users can put rules that apply to their individual  │
 # │ ways of doing things into global git ignore files that they set up using  │
-# │ (e.g.) "git config --global core.excludesfile ~/.gitignore_global".       │
-# │ A number of files such as Emacs checkpoint and backup files are things    │
-# │ that are not specific to a given project; rather, Emacs creates them      │
-# │ everywhere, in all projects, because they're a byproduct of how Emacs     │
+# │ (e.g.) "git config --global core.excludesfile ~/.gitignore_global". For   │
+# │ example, a number of files such as Emacs checkpoint and backup files are  │
+# │ things that are not specific to a given project; rather, Emacs creates    │
+# │ them everywhere, in all projects, because they're a byproduct of how it   │
 # │ works. Thus, rules to ignore them belong in users' own global .gitignore  │
 # │ files, not in a project's .gitignore.                                     │
 # │                                                                           │

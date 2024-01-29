@@ -1,4 +1,4 @@
-# GitHub Actions workflow for Waystation version 1.6.0.
+# GitHub Actions workflow for Waystation version 1.7.0.
 # Available as the file "sample-workflow.yml" from the software
 # repository at https://github.com/caltechlibrary/waystation
 
@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: "Run without actually sending URLs"
+        description: Run without actually sending URLs
         type: boolean
 
 jobs:
@@ -19,6 +19,6 @@ jobs:
     name: Run Waystation
     runs-on: ubuntu-latest
     steps:
-      - uses: caltechlibrary/waystation@main
+      - uses: caltechlibrary/waystation@1.7
         with:
           dry_run: ${{github.event.inputs.dry_run || false}}

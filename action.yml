@@ -4,35 +4,35 @@
 # License: Modified BSD 3-clause – see file "LICENSE" in the project website.
 # Website: https://github.com/caltechlibrary/waystation
 
-name: 'Waystation'
-description: "Archive a repository's GitHub Pages in the Wayback Machine"
-author: 'Michael Hucka -- https://github.com/mhucka'
+name: Waystation
+description: Archive a repository's GitHub Pages in the Wayback Machine
+author: Michael Hucka – https://github.com/mhucka
 branding:
   icon: camera
   color: orange
 
 inputs:
   dry_run:
-    description: 'Print what would be done without actually doing it.'
+    description: Print what would be done without actually doing it.
     default: false
     required: false
   save_errors:
     # Corresponds to "saveErrors" in the Wayback Machine GitHub Action.
-    description: 'Whether the Wayback Machine should save pages that return HTTP status 4xx-5xx.'
+    description: Whether the Wayback Machine should save pages that return HTTP status 4xx-5xx.
     default: false
     required: false
   save_outlinks:
     # Corresponds to "saveOutlinks" in the Wayback Machine GitHub Action.
-    description: 'Tell the Wayback Machine to save links to external web pages.'
+    description: Tell the Wayback Machine to save links to external web pages.
     default: true
     required: false
   save_screenshot:
     # Corresponds to "saveScreenshot" in the Wayback Machine GitHub Action.
-    description: 'Tell the Wayback Machine to save a screenshot of the front page.'
+    description: Tell the Wayback Machine to save a screenshot of the front page.
     default: true
     required: false
   debug:
-    description: 'Print context and variables in the GitHub Actions log.'
+    description: Print context and variables in the GitHub Actions log.
     default: false
     required: false
 
@@ -65,14 +65,14 @@ runs:
 
     - name: Quit if GitHub Pages URL is null.
       if: startsWith(env.pages_url, 'null') == true
-      uses: actions/github-script@v6.3.3
+      uses: actions/github-script@v7
       with:
         script: |
           core.setFailed("Could not retrieve the GitHub Pages URL for repository ${{github.repository}}.")
 
     - name: Proceed if this is not a dry run.
       if: startsWith(env.pages_url, 'null') != true && inputs.dry_run != true && inputs.dry_run != 'true'
-      uses: JamieMagee/wayback@v1.3.28
+      uses: JamieMagee/wayback@v1.3.51
       with:
         url: ${{env.pages_url}}
         saveOutlinks: ${{inputs.save_outlinks}}

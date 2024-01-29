@@ -1,10 +1,8 @@
-# =============================================================================
-# @file    Makefile
-# @brief   Makefile for building docs using Sphinx and MyST
-# @created 2021-01-25
-# @license Please see the file named LICENSE in the project directory
-# @website https://github.com/caltechlibrary/waystation
-# =============================================================================
+# Summary: Makefile for building docs using Sphinx and MyST
+#
+# Copyright 2024 California Institute of Technology.
+# License: Modified BSD 3-clause – see file "LICENSE" in the project website.
+# Website: https://github.com/caltechlibrary/waystation
 
 # Before we go any further, test if certain programs are available.
 # The following is based on the approach posted by Jonathan Ben-Avraham to

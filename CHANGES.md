@@ -1,5 +1,16 @@
 # Change log for Waystation
 
+## Version 1.7 (2024-01-29)
+
+Changes in this release:
+
+* Updated Waystation's GitHub Actions dependencies to the latest versions.
+* Added Markdown file linter and YAML file linter workflows and project configs.
+* Updated GitHub workflows to use latest versions of GitHub Actions.
+* Fixed trivial YAML linter warnings in various `.yml` files.
+* Added a Makefile for automating more release processes.
+
+
 ## Version 1.6 (2024-01-02)
 
 Changes in this release:

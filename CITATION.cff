@@ -9,8 +9,8 @@ title: Waystation – Wayback site archiving automation
 abstract: GitHub Action to archive a repo's GitHub Pages in the Wayback Machine
 version: 1.6.0
 date-released: 2024-01-02
-repository-code: "https://github.com/caltechlibrary/waystation"
-license-url: "https://github.com/caltechlibrary/waystation/blob/main/LICENSE"
+repository-code: https://github.com/caltechlibrary/waystation
+license-url: https://github.com/caltechlibrary/waystation/blob/main/LICENSE
 type: software
 keywords:
   - software
