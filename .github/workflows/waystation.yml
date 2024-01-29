@@ -22,7 +22,7 @@ jobs:
     name: Run Waystation
     runs-on: ubuntu-latest
     steps:
-      - uses: caltechlibrary/waystation@main
+      - uses: caltechlibrary/waystation@1.7
         with:
           dry_run: ${{github.event.inputs.dry_run || false}}
           debug: true
