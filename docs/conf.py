@@ -1,13 +1,11 @@
-# =============================================================================
-# @file    conf.py
-# @brief   COnfiguration file for Sphynx + MyST based documentation
-# @created 2021-01-25
-# @license Please see the file named LICENSE in the project directory
-# @website https://github.com/caltechlibrary/waystation
+# Summary: configuration file for Sphynx + MyST based documentation
 #
 # This file only contains a selection of the most common options. For a full
 # list, refer to https://www.sphinx-doc.org/en/master/usage/configuration.html
-# =============================================================================
+#
+# Copyright 2024 California Institute of Technology.
+# License: Modified BSD 3-clause – see file "LICENSE" in the project website.
+# Website: https://github.com/caltechlibrary/waystation
 
 project = 'Waystation'
 copyright = '2024, Caltech Library'
