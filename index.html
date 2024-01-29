@@ -46,7 +46,7 @@
   
   
   
-    <title>Waystation &#8212; Waystation</title>
+    <title>Waystation System Message: WARNING/2 (/home/runner/work/waystation/waystation/docs/index.md, line 1) ’image’: Invalid options format (bad YAML) [myst.directive_parse]  &#8212; Waystation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=83e35b93" />
     <link rel="stylesheet" type="text/css" href="_static/material.css?v=79c92029" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=4f206608" />
@@ -92,7 +92,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">Waystation</span>
-          <span class="md-header-nav__topic"> Waystation </span>
+          <span class="md-header-nav__topic"> Waystation System Message: WARNING/2 (/home/runner/work/waystation/waystation/docs/index.md, line 1) ’image’: Invalid options format (bad YAML) [myst.directive_parse]  </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -211,8 +211,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  <section id="waystation">
-<h1 id="index--page-root">Waystation<a class="reference internal" href="#index--page-root"><img alt="_images/camera.png" class="align-right" src="_images/camera.png" style="width: 10%;"/></a><a class="headerlink" href="#index--page-root" title="Permalink to this heading">¶</a></h1>
+  <section id="waystation-home-runner-work-waystation-waystation-docs-index-md-1-warning-2-image-invalid-options-format-bad-yaml-myst-directive-parse">
+<h1 id="index--page-root">Waystation<img alt="_images/camera.png" src="_images/camera.png"/><a class="headerlink" href="#index--page-root" title="Permalink to this heading">¶</a></h1>
 <p><em>Waystation</em> is a <a class="reference external" href="https://docs.github.com/actions">GitHub Action</a> that makes it easy to archive your repository’s <a class="reference external" href="https://docs.github.com/en/pages">GitHub Pages</a> site automatically in the Internet Archive’s <a class="reference external" href="https://web.archive.org">Wayback Machine</a>.</p>
 <section id="introduction">
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
@@ -235,7 +235,7 @@
 <li><p>In the main branch of your repository, create a <code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code> directory if this directory does not already exist.</p></li>
 <li><p>In the <code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code> directory, create a file named <code class="docutils literal notranslate"><span class="pre">archive-github-pages.yml</span></code>.</p></li>
 <li><p>Copy and paste the <a class="reference external" href="https://raw.githubusercontent.com/caltechlibrary/waystation/main/sample-workflow.yml">following content</a> into the file:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># GitHub Actions workflow for Waystation version 1.5.0.</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># GitHub Actions workflow for Waystation version 1.7.0.</span>
 <span class="c1"># Available as the file "sample-workflow.yml" from the software</span>
 <span class="c1"># repository at https://github.com/caltechlibrary/waystation</span>
 
@@ -248,7 +248,7 @@
 <span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">inputs</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">dry_run</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">"Run</span><span class="nv"> </span><span class="s">without</span><span class="nv"> </span><span class="s">actually</span><span class="nv"> </span><span class="s">sending</span><span class="nv"> </span><span class="s">URLs"</span>
+<span class="w">        </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run without actually sending URLs</span>
 <span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">boolean</span>
 
 <span class="nt">jobs</span><span class="p">:</span>
@@ -256,7 +256,7 @@
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Waystation</span>
 <span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
 <span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caltechlibrary/waystation@main</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caltechlibrary/waystation@1.7</span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">dry_run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{github.event.inputs.dry_run || false}}</span>
 </pre></div>
@@ -374,7 +374,7 @@
               
           </div>
             Last updated on
-              Jan 03, 2024.
+              Jan 29, 2024.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
