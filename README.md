@@ -1,4 +1,4 @@
-# Waystation<img width="10%" align="right" src="https://github.com/caltechlibrary/waystation/blob/main/.graphics/camera.svg">
+# Waystation<img alt="Waystation logo: a stylized icon of a camera drawn in white outline inside an orange-colored circle." width="10%" align="right" src="https://github.com/caltechlibrary/waystation/blob/main/.graphics/camera.svg">
 
 _Waystation_ is a [GitHub Action](https://docs.github.com/actions) that makes it easy to archive your repository's [GitHub Pages](https://docs.github.com/en/pages) site automatically in the Internet Archive's [Wayback Machine](https://web.archive.org).
 
@@ -16,7 +16,7 @@ _Waystation_ is a [GitHub Action](https://docs.github.com/actions) that makes it
 * [Getting help](#getting-help)
 * [Contributing](#contributing)
 * [License](#license)
-* [Acknowledgments](#authors-and-acknowledgments)
+* [Acknowledgments](#acknowledgments)
 
 
 ## Introduction
@@ -41,6 +41,7 @@ To use Waystation, you need to create a GitHub Actions workflow file in your rep
 1. In the main branch of your repository, create a `.github/workflows` directory if this directory does not already exist.
 2. In the `.github/workflows` directory, create a file named `archive-github-pages.yml`.
 3. Copy and paste the [following content](https://raw.githubusercontent.com/caltechlibrary/waystation/main/sample-workflow.yml) into the file:
+
     ```yaml
     # GitHub Actions workflow for Waystation version 1.6.0.
     # Available as the file "sample-workflow.yml" from the software
@@ -67,6 +68,7 @@ To use Waystation, you need to create a GitHub Actions workflow file in your rep
             with:
               dry_run: ${{github.event.inputs.dry_run || false}}
     ```
+
 4. Save the file, add it to your git repository, and commit the changes.
 5. (If you did the steps above outside of GitHub) Push your repository changes to GitHub.
 
@@ -172,6 +174,6 @@ Waystation makes use of the excellent [Wayback Machine GitHub Action](https://gi
 <div align="center">
   <br>
   <a href="https://www.caltech.edu">
-    <img width="100" height="100" src="https://raw.githubusercontent.com/caltechlibrary/waystation/main/.graphics/caltech-round.png">
+    <img width="100" height="100" alt="Caltech logo" src="https://raw.githubusercontent.com/caltechlibrary/waystation/main/.graphics/caltech-round.png">
   </a>
 </div>
