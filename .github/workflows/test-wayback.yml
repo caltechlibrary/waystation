@@ -4,7 +4,7 @@
 # License: Modified BSD 3-clause – see file "LICENSE" in the project website.
 # Website: https://github.com/caltechlibrary/waystation
 
-name: "Test Wayback"
+name: Test Wayback
 on:
   push:
     branches:
