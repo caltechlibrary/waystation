@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: "Run without actually sending URLs"
+        description: Run without actually sending URLs
         type: boolean
         default: true
       debug:
