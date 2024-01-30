@@ -235,7 +235,7 @@
 <li><p>In the main branch of your repository, create a <code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code> directory if this directory does not already exist.</p></li>
 <li><p>In the <code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code> directory, create a file named <code class="docutils literal notranslate"><span class="pre">archive-github-pages.yml</span></code>.</p></li>
 <li><p>Copy and paste the <a class="reference external" href="https://raw.githubusercontent.com/caltechlibrary/waystation/main/sample-workflow.yml">following content</a> into the file:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># GitHub Actions workflow for Waystation version 1.7.0.</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># GitHub Actions workflow for Waystation version 1.8.0.</span>
 <span class="c1"># Available as the file "sample-workflow.yml" from the software</span>
 <span class="c1"># repository at https://github.com/caltechlibrary/waystation</span>
 
@@ -256,7 +256,7 @@
 <span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Waystation</span>
 <span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
 <span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caltechlibrary/waystation@1.7</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">caltechlibrary/waystation@v1.8</span>
 <span class="w">        </span><span class="nt">with</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">dry_run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{github.event.inputs.dry_run || false}}</span>
 </pre></div>
@@ -374,7 +374,7 @@
               
           </div>
             Last updated on
-              Jan 29, 2024.
+              Jan 30, 2024.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
