@@ -1,5 +1,12 @@
 # Change log for Waystation
 
+## Version 1.8 (2024-01-29)
+
+Changes in this release:
+
+* Fix unfortunate typo in version number in examples and workflows involving Waystation.
+
+
 ## Version 1.7 (2024-01-29)
 
 Changes in this release:
