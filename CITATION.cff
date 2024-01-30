@@ -5,12 +5,14 @@ authors:
     given-names: Michael
     email: mhucka@caltech.edu
     orcid: https://orcid.org/0000-0001-9105-5960
-title: Waystation – Wayback site archiving automation
-abstract: GitHub Action to archive a repo's GitHub Pages in the Wayback Machine
-version: 1.6.0
-date-released: 2024-01-02
+title: Waystation
+abstract: GitHub Action to archive the GitHub Pages of a repository in the Wayback Machine.
+version: 1.7.0
+date-released: 2024-01-29
+url: https://caltechlibrary.github.io/waystation
 repository-code: https://github.com/caltechlibrary/waystation
 license-url: https://github.com/caltechlibrary/waystation/blob/main/LICENSE
+doi: 10.22002/hy6ag-xw238
 type: software
 keywords:
   - software
