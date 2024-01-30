@@ -1,4 +1,4 @@
-# Waystation<img alt="Waystation logo: a stylized icon of a camera drawn in white outline inside an orange-colored circle." align="right" width="10%" src="_static/media/camera.png">
+# Waystation<img alt="Waystation logo: a stylized icon of a camera drawn in white outline inside an orange-colored circle." align="right" width="70px" src="_static/media/camera.png">
 
 _Waystation_ is a [GitHub Action](https://docs.github.com/actions) that makes it easy to archive your repository's [GitHub Pages](https://docs.github.com/en/pages) site automatically in the Internet Archive's [Wayback Machine](https://web.archive.org).
 
@@ -27,7 +27,7 @@ To use Waystation, you need to create a GitHub Actions workflow file in your rep
 3. Copy and paste the [following content](https://raw.githubusercontent.com/caltechlibrary/waystation/main/sample-workflow.yml) into the file:
 
     ```yaml
-    # GitHub Actions workflow for Waystation version 1.7.0.
+    # GitHub Actions workflow for Waystation version 1.8.0.
     # Available as the file "sample-workflow.yml" from the software
     # repository at https://github.com/caltechlibrary/waystation
 
@@ -48,7 +48,7 @@ To use Waystation, you need to create a GitHub Actions workflow file in your rep
         name: Run Waystation
         runs-on: ubuntu-latest
         steps:
-          - uses: caltechlibrary/waystation@1.7
+          - uses: caltechlibrary/waystation@v1.8
             with:
               dry_run: ${{github.event.inputs.dry_run || false}}
     ```

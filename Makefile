@@ -144,7 +144,7 @@ report: vars
 
 #: Run code and other files through linters.
 lint:
-	markdownlint-cli2 *.md
+	markdownlint-cli2 $(shell find . -name '*.md')
 	yamllint $(shell find . -name '*.yml')
 
 #: Run unit tests and coverage tests.

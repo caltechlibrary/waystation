@@ -3,9 +3,9 @@
   "@type": "SoftwareSourceCode",
   "name": "Waystation",
   "identifier": "waystation",
-  "description": "GitHub Action to archive a repo's GitHub Pages in the Wayback Machine",
-  "version": "1.6.0",
-  "datePublished": "2024-01-02",
+  "description": "GitHub Action to archive the GitHub Pages of a repository in the Wayback Machine.",
+  "version": "1.8.0",
+  "datePublished": "2024-01-29",
   "author": [
     {
       "@type": "Person",
@@ -53,6 +53,7 @@
   "releaseNotes": "https://github.com/caltechlibrary/waystation/blob/main/CHANGES.md",
   "issueTracker": "https://github.com/caltechlibrary/waystation/issues",
   "downloadUrl": "https://github.com/caltechlibrary/waystation/archive/main.zip",
+  "relatedLink": "https://data.caltech.edu/records/hy6ag-xw238",
   "keywords": [
     "software",
     "automation",
