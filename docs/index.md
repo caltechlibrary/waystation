@@ -1,4 +1,4 @@
-# Waystation<img alt="Waystation logo: a stylized icon of a camera drawn in white outline inside an orange-colored circle." align="right" width="70px" src="_static/media/camera.png">
+# Waystation<img alt="The Waystation logo – a stylized icon of a camera drawn in white outline inside an orange-colored circle." align="right" width="8%" src="_static/media/camera.png">
 
 _Waystation_ is a [GitHub Action](https://docs.github.com/actions) that makes it easy to archive your repository's [GitHub Pages](https://docs.github.com/en/pages) site automatically in the Internet Archive's [Wayback Machine](https://web.archive.org).
 
