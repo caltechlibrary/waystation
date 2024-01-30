@@ -4,7 +4,7 @@
   "name": "Waystation",
   "identifier": "waystation",
   "description": "GitHub Action to archive the GitHub Pages of a repository in the Wayback Machine.",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "datePublished": "2024-01-29",
   "author": [
     {
